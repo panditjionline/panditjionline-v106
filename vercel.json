@@ -1,0 +1,215 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(ai-catalog\\.json|seo-data\\.json|\\.well-known/.*\\.json)",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600" }
+      ]
+    },
+    {
+      "source": "/(llms|ads|robots)\\.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/(sitemap|feed|rss)\\.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=1800" }
+      ]
+    },
+    {
+      "source": "/manifest.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Service-Worker-Allowed", "value": "/" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/(app-engine\\.txt|app-engine\\.html)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/admin-download-manifest\\.json",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, max-age=0" },
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/shell-runtime\\.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/admin-control\\.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=60, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/favicon.ico",
+      "headers": [
+        { "key": "Content-Type", "value": "image/x-icon" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "X-Robots-Tag", "value": "all" }
+      ]
+    },
+    {
+      "source": "/(favicon-48x48|favicon-96x96|pwa-192x192|apple-touch-icon)\\.png",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "X-Robots-Tag", "value": "all" }
+      ]
+    },
+    {
+      "source": "/(assets/.*|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2))",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/((?!api/|assets/|og-card/|og-svg/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|js|css|json|txt|xml|map)).*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate, s-maxage=0" },
+        { "key": "Link", "value": "</ai-catalog.json>; rel=\"ai-catalog\", </ai-catalog.json>; rel=\"ard\"" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(self)" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://adservice.google.com https://*.google.com https://*.doubleclick.net https://*.googletagservices.com https://partner.googleadservices.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://fundingchoicesmessages.google.com https://www.googletagmanager.com https://translate.google.com https://translate.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https: wss:; media-src 'self' https: data: blob:; frame-src 'self' https://www.google.com https://*.google.com https://www.youtube.com https://*.doubleclick.net https://*.googlesyndication.com https://fundingchoicesmessages.google.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';" },
+        { "key": "X-Robots-Tag", "value": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" }
+      ]
+    },
+    {
+      "source": "/(404\\.html|404|llms\\.txt|ai-catalog\\.json|admin-download-manifest\\.json|app-engine\\.txt|app-engine\\.html|download-center|indexnow\\.txt|\\.well-known/.*|api/.*|manifest\\.json|sw\\.js|middleware\\.js|admin-control\\.js|shell-runtime\\.js)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "panditjionline.online" }],
+      "destination": "https://www.panditjionline.online/:path*",
+      "permanent": true
+    },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/aaj-ka-panchang", "destination": "/panchang", "permanent": true },
+    { "source": "/media", "destination": "/vedic-videos", "permanent": true },
+    { "source": "/media/", "destination": "/vedic-videos", "permanent": true },
+    { "source": "/rashi", "destination": "/rashifal", "permanent": true },
+    { "source": "/kundli", "destination": "/janam-kundali", "permanent": true },
+    { "source": "/kundali", "destination": "/janam-kundali", "permanent": true },
+    { "source": "/milan", "destination": "/kundali-milan", "permanent": true },
+    { "source": "/gun-milan", "destination": "/kundali-milan", "permanent": true },
+    { "source": "/mandir", "destination": "/digital-mandir", "permanent": true },
+    { "source": "/muhurat", "destination": "/shubh-muhurat", "permanent": true },
+    { "source": "/singh-rashifal", "destination": "/simha-rashifal", "permanent": true },
+    { "source": "/dainik-rashifal", "destination": "/rashifal", "permanent": true },
+    { "source": "/chat", "destination": "/jyotish-chat", "permanent": true },
+    { "source": "/jyotish-ai", "destination": "/jyotish-chat", "permanent": true },
+    { "source": "/services", "destination": "/puja-services", "permanent": true },
+    { "source": "/puja-booking", "destination": "/puja-services", "permanent": true },
+    { "source": "/jaap", "destination": "/mantra-jaap", "permanent": true },
+    { "source": "/jap-mala", "destination": "/mantra-jaap", "permanent": true },
+    { "source": "/videos", "destination": "/vedic-videos", "permanent": true },
+    { "source": "/youtube", "destination": "/vedic-videos", "permanent": true },
+    { "source": "/dharma-gyan", "destination": "/dharm-gyan-kosh", "permanent": true },
+    { "source": "/gyan-kosh", "destination": "/dharm-gyan-kosh", "permanent": true },
+    { "source": "/history", "destination": "/", "permanent": true },
+    { "source": "/mera-khata", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/contact", "destination": "/contact-us", "permanent": true },
+    { "source": "/terms", "destination": "/terms-and-conditions", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/puja-griha-pravesh", "destination": "/puja/griha-pravesh", "permanent": true },
+    { "source": "/puja-satyanarayan-katha", "destination": "/puja/satyanarayan-katha", "permanent": true },
+    { "source": "/puja-rudrabhishek", "destination": "/puja/rudrabhishek", "permanent": true },
+    { "source": "/puja-mahamrityunjaya-jap", "destination": "/puja/mahamrityunjaya-jap", "permanent": true },
+    { "source": "/puja-navgrah-shanti", "destination": "/puja/navgrah-shanti", "permanent": true },
+    { "source": "/puja-kundali-paramarsh", "destination": "/puja/kundali-paramarsh", "permanent": true },
+    { "source": "/ram-shalaka", "destination": "/ram-shalaka-prashnavali", "permanent": true },
+    { "source": "/shani-sadesati", "destination": "/shani-sadesati-calculator", "permanent": true },
+    { "source": "/puja-samagri", "destination": "/puja-samagri-list", "permanent": true },
+    { "source": "/aarti-chalisa", "destination": "/aarti-chalisa-sangrah", "permanent": true },
+    { "source": "/vrat-katha", "destination": "/vrat-katha-paran-vidhi", "permanent": true },
+    { "source": "/vastu-shastra", "destination": "/vastu-shastra-tips", "permanent": true },
+    { "source": "/vastu", "destination": "/vastu-shastra-tips", "permanent": true },
+    { "source": "/ratna-rudraksha", "destination": "/ratna-rudraksha-guide", "permanent": true },
+    { "source": "/swapna-phal", "destination": "/swapna-phal-shakun-shastra", "permanent": true },
+    { "source": "/swapna-shakun", "destination": "/swapna-phal-shakun-shastra", "permanent": true },
+    { "source": "/swarodaya", "destination": "/swarodaya-vigyan", "permanent": true },
+    { "source": "/gita-niti", "destination": "/geeta-chanakya-niti", "permanent": true },
+    { "source": "/baby-names", "destination": "/vedic-baby-names", "permanent": true },
+    { "source": "/tirth-darshan", "destination": "/char-dham-tirth-darshan", "permanent": true },
+    { "source": "/teerth", "destination": "/char-dham-tirth-darshan", "permanent": true }
+  ],
+  "rewrites": [
+    {
+      "source": "/(pwa-512x512\\.png|pwa-maskable-512x512\\.png|app-icon\\.svg)",
+      "destination": "/pwa-192x192.png"
+    },
+    {
+      "source": "/.well-known/(ai-catalog|ard).json",
+      "destination": "/ai-catalog.json"
+    },
+    {
+      "source": "/og-card/:slug-wa-v:ver(\\d+).:ext",
+      "destination": "/og-card/home-wa-v42.jpg"
+    },
+    {
+      "source": "/og-card/:slug",
+      "destination": "/og-card/home-discover-v42.jpg"
+    },
+    {
+      "source": "/((?!api/|assets/|og-card/|og-svg/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|js|css|json|txt|xml|map)).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+

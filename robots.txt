@@ -1,0 +1,94 @@
+# Pandit Ji Online - Technical SEO & Search Index Hygiene Protocol
+# Acharya Pandit Shashank Sharma (Rudrapur, Uttarakhand)
+
+# 1. Google AdSense Review Crawler (Mediapartners-Google)
+User-agent: Mediapartners-Google
+Allow: /
+
+# 2. Google Ads Quality & Verification Bot
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# 3. General Search Engines & Standard Crawlers (Canonical Public Pages Only)
+User-agent: *
+Allow: /
+Allow: /ads.txt
+Allow: /og-card/
+Allow: /og-svg/
+Allow: /deities/
+Allow: /assets/
+Allow: /seo-data.json
+Allow: /seo-chunks/
+Allow: /ai-catalog.json
+Allow: /llms.txt
+Allow: /.well-known/
+Allow: /googlea0e64484b80e13d1.html
+Disallow: /api/
+Disallow: /404.html
+Disallow: /download-center
+Disallow: /indexnow.txt
+Disallow: /*?city=
+Disallow: /*?date=
+
+User-agent: Googlebot
+Allow: /
+Allow: /ads.txt
+Allow: /og-card/
+Allow: /og-svg/
+Allow: /deities/
+Allow: /assets/
+Allow: /seo-data.json
+Allow: /seo-chunks/
+Allow: /ai-catalog.json
+Allow: /llms.txt
+Allow: /.well-known/
+Allow: /googlea0e64484b80e13d1.html
+Disallow: /api/
+Disallow: /404.html
+Disallow: /download-center
+Disallow: /indexnow.txt
+Disallow: /*?city=
+Disallow: /*?date=
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /og-card/
+Allow: /og-svg/
+Allow: /deities/
+Allow: /favicon.ico
+Allow: /favicon-48x48.png
+Allow: /favicon-96x96.png
+Allow: /pwa-192x192.png
+Allow: /apple-touch-icon.png
+
+User-agent: Google-Favicon
+Allow: /
+Allow: /favicon.ico
+Allow: /favicon-48x48.png
+Allow: /favicon-96x96.png
+Allow: /pwa-192x192.png
+Allow: /apple-touch-icon.png
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /og-card/
+Allow: /og-svg/
+Allow: /deities/
+
+User-agent: WhatsApp
+Allow: /
+Allow: /og-card/
+Allow: /og-svg/
+Allow: /deities/
+
+User-agent: Twitterbot
+Allow: /
+Allow: /og-card/
+Allow: /og-svg/
+Allow: /deities/
+
+Sitemap: https://www.panditjionline.online/sitemap.xml
+Sitemap: https://www.panditjionline.online/feed.xml
