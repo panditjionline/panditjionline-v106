@@ -1,6 +1,6 @@
-// Pandit Ji Online — Clean Native Code-Split Service Worker (v106)
+// Pandit Ji Online — Instant-Update Native Code-Split Service Worker (v107)
 // Active ONLY on live production domain (panditjionline.online); self-unregisters on local/preview hosts
-const CACHE_NAME = 'panditji-v106';
+const CACHE_NAME = 'panditjionline-v107';
 const IS_LIVE_PROD_HOST = /^(?:www\.)?panditjionline\.online$/i.test(self.location.hostname || '');
 const PRECACHE_ASSETS = [
   '/favicon.ico',
@@ -10,15 +10,22 @@ const PRECACHE_ASSETS = [
   '/apple-touch-icon.png'
 ];
 
+self.addEventListener('message', (event) => {
+  if (event && event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('install', (event) => {
   if (!IS_LIVE_PROD_HOST) {
     self.skipWaiting();
     return;
   }
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_ASSETS).catch(() => {}))
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(PRECACHE_ASSETS).catch(() => {}))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
@@ -35,8 +42,8 @@ self.addEventListener('activate', (event) => {
     caches.keys()
       .then((keys) => Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))))
       .then(() => caches.open(CACHE_NAME).then((cache) => cache.delete('/manifest.json').catch(() => {})))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
@@ -65,7 +72,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 1. HTML navigations: Network-First for fresh Panchang/deploys with offline cache fallback
+  // 1. Strict Network-First (bypassing HTTP disk cache) for index.html & all navigations; cache fallback only offline
   const isHtmlNav =
     event.request.mode === 'navigate' ||
     url.pathname === '/' ||
@@ -75,7 +82,7 @@ self.addEventListener('fetch', (event) => {
   if (isHtmlNav) {
     event.respondWith(
       caches.open(CACHE_NAME).then((cache) =>
-        fetch(event.request)
+        fetch(event.request, { cache: 'no-store' })
           .then((networkResponse) => {
             if (networkResponse && networkResponse.status === 200) {
               cache.put(event.request, networkResponse.clone());
