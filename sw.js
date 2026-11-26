@@ -1,6 +1,6 @@
-// Pandit Ji Online — Instant-Update Native Code-Split Service Worker (v109)
+// Pandit Ji Online — Instant-Update Native Code-Split Service Worker (v110)
 // Active ONLY on live production domain (panditjionline.online); self-unregisters on local/preview hosts
-const CACHE_NAME = 'panditjionline-v109';
+const CACHE_NAME = 'panditjionline-v110';
 const IS_LIVE_PROD_HOST = /^(?:www\.)?panditjionline\.online$/i.test(self.location.hostname || '');
 const PRECACHE_ASSETS = [
   '/favicon.ico',

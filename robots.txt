@@ -26,10 +26,17 @@ Allow: /ai-catalog.json
 Allow: /llms.txt
 Allow: /.well-known/
 Allow: /googlea0e64484b80e13d1.html
+Disallow: /src/
+Disallow: /app/
+Disallow: /node_modules/
+Disallow: /public/
 Disallow: /api/
 Disallow: /404.html
 Disallow: /download-center
 Disallow: /indexnow.txt
+Disallow: /*?tab=
+Disallow: /*?category=
+Disallow: /*?admin=
 Disallow: /*?city=
 Disallow: /*?date=
 
@@ -46,10 +53,17 @@ Allow: /ai-catalog.json
 Allow: /llms.txt
 Allow: /.well-known/
 Allow: /googlea0e64484b80e13d1.html
+Disallow: /src/
+Disallow: /app/
+Disallow: /node_modules/
+Disallow: /public/
 Disallow: /api/
 Disallow: /404.html
 Disallow: /download-center
 Disallow: /indexnow.txt
+Disallow: /*?tab=
+Disallow: /*?category=
+Disallow: /*?admin=
 Disallow: /*?city=
 Disallow: /*?date=
 
