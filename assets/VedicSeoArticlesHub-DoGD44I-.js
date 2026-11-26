@@ -1,0 +1,2574 @@
+import { r as reactExports, j as jsxRuntimeExports } from "./vendor-react-CCbeDaYX.js";
+import { b as buildSingleDayPanchang } from "./panchang-core-24ia-akc.js";
+import { a7 as SocialShareBar, n as getWhatsAppLink } from "./index-AQ5SI3vl.js";
+import { A as ALL_UNIFIED_NAAM_RASHI_PROFILES, U as UnifiedNaamRashiPageView, V as VivahMuhuratPersonalCalculator, M as MundanMuhuratPersonalCalculator, b as VahanKharidPersonalCalculator, c as AllLettersNaamRashiAnalyzer, d as ShaniSadesatiCheckerCalculator, e as ManglikDoshParikshanCalculator, f as NadiDoshMilanCalculator, G as GrihaPraveshPersonalCalculator, E as EkadashiParanaInteractiveCalculator, K as KaalsarpDoshCheckerCalculator, g as SwapnaSaapInteractiveAnalyzer, S as ShastroktaVedicVivechanCard } from "./DharmGyanNewPagesView-B2i8SwMW.js";
+import { PageRelatedSeoQuestions } from "./PageRelatedSeoQuestions-kQRDZAdC.js";
+import { b as VEDIC_SEO_TOPICS_META, V as VEDIC_SEO_TOPIC_SLUGS } from "./seo-core-DnNehtWz.js";
+import { J as ArrowLeft, S as Sparkles, aj as Layers, ae as HeartHandshake, x as Calendar, a5 as CircleCheck, a4 as TriangleAlert, b9 as Scissors, a6 as Car, ba as UserCheck, a9 as Flame, n as ShieldCheck, a8 as Compass, w as BookOpen, ax as ChevronUp, al as ChevronDown, t as MessageCircle, F as ArrowRight, a2 as Clock } from "./vendor-icons-Bk5Rg8-9.js";
+import "./vendor-astronomy-C8JZdkQu.js";
+import "./vendor-pdf-CpPyS1re.js";
+import "./VedicDateInput-QzCgtRnr.js";
+import "./BirthPlaceGpsButton-BKE2rBQq.js";
+import "./vedicTripleCheck-C0ip0Qtr.js";
+import "./evergreenFestivalsData-DDl2T8xy.js";
+import "./seoDataClient-BoCd_Bhs.js";
+const VedicSeoArticlesHub = ({
+  activeSlug,
+  onSelectTopic,
+  onNavigateToTab,
+  onAskPanditInChat,
+  onOpenBookingModal,
+  currentUser
+}) => {
+  const [viewAllMode, setViewAllMode] = reactExports.useState(false);
+  const [openFaqKey, setOpenFaqKey] = reactExports.useState("0");
+  const [vivahYearFilter, setVivahYearFilter] = reactExports.useState("all");
+  const [vivahMonthFilter, setVivahMonthFilter] = reactExports.useState("all");
+  const [vahanDayFilter, setVahanDayFilter] = reactExports.useState("all");
+  reactExports.useEffect(() => {
+    setOpenFaqKey("0");
+  }, [activeSlug]);
+  const vivahAllList = reactExports.useMemo(() => {
+    if (!viewAllMode && activeSlug !== "vivah-muhurat-2027") return [];
+    const w = window;
+    if (w.__PJ_VIVAH_CACHE__) return w.__PJ_VIVAH_CACHE__;
+    const candidates = [
+      // 2026 November
+      {
+        year: 2026,
+        month: 11,
+        day: 18,
+        lagnaWindowHi: "वृश्चिक व धनु लग्न (सायं 06:15 PM – 10:20 PM)",
+        auspiciousNoteHi: "उत्तराभाद्रपद नक्षत्र + शुक्ल नवमी — कार्तिक मास का प्रथम शुभ लग्न"
+      },
+      {
+        year: 2026,
+        month: 11,
+        day: 22,
+        lagnaWindowHi: "कुंभ व मीन लग्न (रात्रि 11:10 PM – 02:40 AM)",
+        auspiciousNoteHi: "रोहिणी नक्षत्र + हर्षण योग — सर्वगुण संपन्न दाम्पत्य योग"
+      },
+      {
+        year: 2026,
+        month: 11,
+        day: 25,
+        lagnaWindowHi: "वृषभ व मिथुन लग्न (प्रातः 07:45 AM – 11:20 AM), तुला लग्न (सायं 05:40 PM – 07:55 PM)",
+        auspiciousNoteHi: "मृगशिरा नक्षत्र + कौलव करण — कार्तिक पूर्णिमा पावन काल"
+      },
+      {
+        year: 2026,
+        month: 11,
+        day: 27,
+        lagnaWindowHi: "कर्क व सिंह लग्न (प्रातः 10:30 AM – 02:45 PM)",
+        auspiciousNoteHi: "पुनर्वसु नक्षत्र + सिद्धि योग — ऐश्वर्य एवं वंश वृद्धि दायक"
+      },
+      {
+        year: 2026,
+        month: 11,
+        day: 28,
+        lagnaWindowHi: "धनु व मकर लग्न (सायं 07:15 PM – 11:10 PM)",
+        auspiciousNoteHi: "पुष्य नक्षत्र + बालव करण — महाशुभ स्थिर लग्न मुहूर्त"
+      },
+      {
+        year: 2026,
+        month: 11,
+        day: 30,
+        lagnaWindowHi: "वृषभ लग्न (प्रातः 07:10 AM – 09:15 AM), कुंभ लग्न (रात्रि 10:45 PM – 12:15 AM)",
+        auspiciousNoteHi: "मघा नक्षत्र + वणिज करण — मार्गशीर्ष कृष्ण षष्ठी विवाह लग्न"
+      },
+      // 2026 December
+      {
+        year: 2026,
+        month: 12,
+        day: 2,
+        lagnaWindowHi: "मिथुन लग्न (प्रातः 08:50 AM – 11:05 AM), मीन लग्न (रात्रि 12:30 AM – 02:00 AM)",
+        auspiciousNoteHi: "उत्तराफाल्गुनी नक्षत्र + प्रीति योग — अखंड प्रेम व सुख समृद्धि"
+      },
+      {
+        year: 2026,
+        month: 12,
+        day: 4,
+        lagnaWindowHi: "सिंह लग्न (दोपहर 01:05 PM – 03:20 PM), धनु लग्न (सायं 06:50 PM – 08:55 PM)",
+        auspiciousNoteHi: "हस्त नक्षत्र + तैतिल करण — शुक्रवार शुभ विवाह लग्न"
+      },
+      {
+        year: 2026,
+        month: 12,
+        day: 9,
+        lagnaWindowHi: "तुला लग्न (सायं 04:55 PM – 07:10 PM), मकर लग्न (रात्रि 09:30 PM – 11:35 PM)",
+        auspiciousNoteHi: "अनुराधा नक्षत्र + शोभन योग — अटूट वैवाहिक सामंजस्य"
+      },
+      {
+        year: 2026,
+        month: 12,
+        day: 10,
+        lagnaWindowHi: "वृश्चिक लग्न (सायं 05:40 PM – 07:55 PM), कुंभ लग्न (रात्रि 10:15 PM – 11:50 PM)",
+        auspiciousNoteHi: "ज्येष्ठा नक्षत्र व बालव करण — गुरुवार बृहस्पति बल युक्त"
+      },
+      {
+        year: 2026,
+        month: 12,
+        day: 11,
+        lagnaWindowHi: "धनु लग्न (सायं 06:30 PM – 08:35 PM), मीन लग्न (रात्रि 12:05 AM – 01:35 AM)",
+        auspiciousNoteHi: "मूल नक्षत्र + वृद्धि योग — पौष संक्रांति पूर्व का अंतिम लग्न"
+      },
+      {
+        year: 2026,
+        month: 12,
+        day: 14,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 09:40 AM – 11:55 AM), कुंभ लग्न (रात्रि 10:00 PM – 11:35 PM)",
+        auspiciousNoteHi: "श्रवण व धनिष्ठा नक्षत्र — खरमास से पूर्व विशेष मुहूर्त"
+      },
+      // 2027 January
+      {
+        year: 2027,
+        month: 1,
+        day: 17,
+        lagnaWindowHi: "वृषभ लग्न (प्रातः 06:45 AM – 08:45 AM), धनु लग्न (सायं 05:45 PM – 07:50 PM)",
+        auspiciousNoteHi: "रोहिणी नक्षत्र + मकर संक्रांति पश्चात उत्तरायण पावन लग्न"
+      },
+      {
+        year: 2027,
+        month: 1,
+        day: 18,
+        lagnaWindowHi: "मिथुन लग्न (प्रातः 08:15 AM – 10:25 AM), मीन लग्न (रात्रि 11:45 PM – 01:15 AM)",
+        auspiciousNoteHi: "मृगशिरा नक्षत्र + शुभ योग — सौभाग्य व आरोग्य कारक"
+      },
+      {
+        year: 2027,
+        month: 1,
+        day: 23,
+        lagnaWindowHi: "सिंह लग्न (दोपहर 12:15 PM – 02:30 PM), कुंभ लग्न (रात्रि 09:30 PM – 11:05 PM)",
+        auspiciousNoteHi: "पुष्य नक्षत्र + सिद्धि योग — पौष पूर्णिमा पावन समय"
+      },
+      {
+        year: 2027,
+        month: 1,
+        day: 25,
+        lagnaWindowHi: "कन्या व तुला लग्न (दोपहर 02:00 PM – 06:20 PM)",
+        auspiciousNoteHi: "मघा नक्षत्र + कौलव करण — संतान व कुल समृद्धि प्रदायक"
+      },
+      {
+        year: 2027,
+        month: 1,
+        day: 30,
+        lagnaWindowHi: "धनु लग्न (सायं 05:15 PM – 07:20 PM), मकर लग्न (रात्रि 07:25 PM – 09:30 PM)",
+        auspiciousNoteHi: "स्वाति नक्षत्र + ध्रुव योग — दीर्घायु व स्थायित्व योग"
+      },
+      // 2027 February
+      {
+        year: 2027,
+        month: 2,
+        day: 1,
+        lagnaWindowHi: "वृश्चिक लग्न (दोपहर 03:45 PM – 06:05 PM), कुंभ लग्न (रात्रि 08:55 PM – 10:30 PM)",
+        auspiciousNoteHi: "अनुराधा नक्षत्र + गर करण — वसंत पंचमी काल का श्रेष्ठ मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 2,
+        day: 6,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 08:40 AM – 10:55 AM), धनु लग्न (सायं 04:55 PM – 07:00 PM)",
+        auspiciousNoteHi: "श्रवण नक्षत्र + व्यतीपात परिहार — माघ शुक्ल पक्ष पावन दिन"
+      },
+      {
+        year: 2027,
+        month: 2,
+        day: 7,
+        lagnaWindowHi: "सिंह लग्न (प्रातः 11:20 AM – 01:35 PM), मीन लग्न (रात्रि 10:30 PM – 12:00 AM)",
+        auspiciousNoteHi: "धनिष्ठा नक्षत्र + वणिज करण — रविवार अखंड सौभाग्य लग्न"
+      },
+      {
+        year: 2027,
+        month: 2,
+        day: 14,
+        lagnaWindowHi: "वृषभ व मिथुन लग्न (प्रातः 06:15 AM – 09:40 AM), तुला लग्न (दोपहर 03:30 PM – 05:40 PM)",
+        auspiciousNoteHi: "रोहिणी नक्षत्र + शोभन योग — प्रेम व दांपत्य सुख समृद्धि"
+      },
+      {
+        year: 2027,
+        month: 2,
+        day: 18,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 07:55 AM – 10:10 AM), धनु लग्न (सायं 04:15 PM – 06:20 PM)",
+        auspiciousNoteHi: "पुनर्वसु नक्षत्र + तैतिल करण — गुरु पुष्य समतुल्य मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 2,
+        day: 21,
+        lagnaWindowHi: "सिंह लग्न (प्रातः 10:30 AM – 12:45 PM), कुंभ लग्न (रात्रि 07:45 PM – 09:20 PM)",
+        auspiciousNoteHi: "मघा नक्षत्र + अतिगंड परिहार — फाल्गुन कृष्ण प्रतिपदा लग्न"
+      },
+      // 2027 April
+      {
+        year: 2027,
+        month: 4,
+        day: 19,
+        lagnaWindowHi: "मिथुन व कर्क लग्न (प्रातः 09:15 AM – 01:25 PM)",
+        auspiciousNoteHi: "हस्त नक्षत्र + साध्य योग — चैत्र नवरात्रि पश्चात वैशाख प्रथम लग्न"
+      },
+      {
+        year: 2027,
+        month: 4,
+        day: 21,
+        lagnaWindowHi: "सिंह लग्न (प्रातः 11:45 AM – 02:00 PM), धनु लग्न (रात्रि 09:10 PM – 11:15 PM)",
+        auspiciousNoteHi: "स्वाति नक्षत्र + शुभ करण — बुधवार बुध-शुक्र प्रीति योग"
+      },
+      {
+        year: 2027,
+        month: 4,
+        day: 26,
+        lagnaWindowHi: "तुला लग्न (दोपहर 02:15 PM – 04:30 PM), कुंभ लग्न (रात्रि 09:20 PM – 10:55 PM)",
+        auspiciousNoteHi: "मूल नक्षत्र + बालव करण — वैशाख कृष्ण पंचमी शुभ मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 4,
+        day: 28,
+        lagnaWindowHi: "धनु व मकर लग्न (सायं 06:40 PM – 10:45 PM)",
+        auspiciousNoteHi: "उत्तराषाढ़ा नक्षत्र + ब्रह्म योग — ध्रुव संज्ञक श्रेष्ठ लग्न"
+      },
+      {
+        year: 2027,
+        month: 4,
+        day: 30,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 08:35 AM – 10:50 AM), मीन लग्न (रात्रि 11:30 PM – 01:00 AM)",
+        auspiciousNoteHi: "श्रवण नक्षत्र + तैतिल करण — शुक्रवार लक्ष्मी नारायण योग"
+      },
+      // 2027 May
+      {
+        year: 2027,
+        month: 5,
+        day: 3,
+        lagnaWindowHi: "मिथुन व कर्क लग्न (प्रातः 08:24 AM – 11:45 AM), तुला लग्न (सायं 05:32 PM – 07:48 PM)",
+        auspiciousNoteHi: "उत्तराभाद्रपद नक्षत्र एवं कौलव करण — स्थायित्व व सौभाग्य वर्धक"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 4,
+        lagnaWindowHi: "वृषभ लग्न (प्रातः 06:18 AM – 08:15 AM), सिंह लग्न (दोपहर 12:55 PM – 03:10 PM)",
+        auspiciousNoteHi: "रेवती नक्षत्र एवं गर करण — दाम्पत्य प्रेम व ऐश्वर्य सिद्धि योग"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 8,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 10:12 AM – 12:28 PM), धनु लग्न (रात्रि 09:45 PM – 11:50 PM)",
+        auspiciousNoteHi: "रोहिणी नक्षत्र + शोभन योग + कौलव करण — सर्वश्रेष्ठ पंच-कल्याणक विवाह मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 9,
+        lagnaWindowHi: "मिथुन लग्न (प्रातः 08:02 AM – 10:15 AM), तुला लग्न (सायं 05:10 PM – 07:26 PM)",
+        auspiciousNoteHi: "मृगशिरा नक्षत्र + सुकर्मा योग — अक्षय दाम्पत्य सुख योग"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 16,
+        lagnaWindowHi: "वृषभ व मिथुन लग्न (प्रातः 06:05 AM – 09:48 AM), कुंभ लग्न (रात्रि 01:12 AM – 02:44 AM)",
+        auspiciousNoteHi: "उत्तराफाल्गुनी व हस्त नक्षत्र संयोग — कुल-वृद्धि एवं समृद्धि कारक"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 17,
+        lagnaWindowHi: "कर्क व सिंह लग्न (प्रातः 09:38 AM – 02:18 PM), वृश्चिक लग्न (सायं 07:05 PM – 09:22 PM)",
+        auspiciousNoteHi: "हस्त नक्षत्र + सिद्धि योग + बालव करण — सर्वार्थ सिद्धिदायक लग्न"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 21,
+        lagnaWindowHi: "मिथुन लग्न (प्रातः 07:16 AM – 09:30 AM), कन्या व तुला लग्न (दोपहर 02:10 PM – 06:42 PM)",
+        auspiciousNoteHi: "अनुराधा नक्षत्र + शिव योग — अटूट वैवाहिक सामंजस्य योग"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 23,
+        lagnaWindowHi: "सिंह लग्न (प्रातः 11:36 AM – 01:52 PM), धनु लग्न (रात्रि 08:48 PM – 10:52 PM)",
+        auspiciousNoteHi: "मूल नक्षत्र + साध्य योग + वणिज करण — शुभ सायंकालीन एवं रात्रि लग्न"
+      },
+      {
+        year: 2027,
+        month: 5,
+        day: 25,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 09:06 AM – 11:24 AM), मकर व कुंभ लग्न (रात्रि 10:42 PM – 02:05 AM)",
+        auspiciousNoteHi: "उत्तराषाढ़ा नक्षत्र + शुक्ल योग — ध्रुव संज्ञक श्रेष्ठ विवाह मुहूर्त"
+      },
+      // 2027 June
+      {
+        year: 2027,
+        month: 6,
+        day: 1,
+        lagnaWindowHi: "मिथुन व कर्क लग्न (प्रातः 06:40 AM – 10:56 AM), तुला लग्न (दोपहर 03:45 PM – 06:00 PM)",
+        auspiciousNoteHi: "रेवती नक्षत्र + सौभाग्य योग + बालव करण — जून मास का प्रथम सर्वोच्च मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 5,
+        lagnaWindowHi: "सिंह व कन्या लग्न (प्रातः 10:42 AM – 03:18 PM), धनु लग्न (रात्रि 07:56 PM – 10:02 PM)",
+        auspiciousNoteHi: "रोहिणी व मृगशिरा नक्षत्र + धृति योग — अखंड सौभाग्य प्रदायक"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 10,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 08:05 AM – 10:22 AM), वृश्चिक व धनु लग्न (सायं 05:30 PM – 09:42 PM)",
+        auspiciousNoteHi: "मघा नक्षत्र + हर्षण योग + तैतिल करण — गुरुवार बृहस्पति बल युक्त लग्न"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 13,
+        lagnaWindowHi: "कन्या व तुला लग्न (दोपहर 12:38 PM – 05:12 PM), कुंभ लग्न (रात्रि 11:24 PM – 12:56 AM)",
+        auspiciousNoteHi: "हस्त नक्षत्र + तैतिल करण — रविवार दशमी तिथि शुभ लग्न"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 15,
+        lagnaWindowHi: "सिंह लग्न (प्रातः 10:02 AM – 12:18 PM), धनु व मकर लग्न (सायं 07:18 PM – 11:08 PM)",
+        auspiciousNoteHi: "स्वाति नक्षत्र + बव करण — चर संज्ञक मंगलकारी विवाह मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 19,
+        lagnaWindowHi: "तुला व वृश्चिक लग्न (दोपहर 02:32 PM – 07:02 PM), मीन लग्न (रात्रि 12:36 AM – 02:05 AM)",
+        auspiciousNoteHi: "मूल नक्षत्र + शुभ योग + बव करण — ज्येष्ठ पूर्णिमा महा-शुभ संयोग"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 21,
+        lagnaWindowHi: "कन्या लग्न (प्रातः 11:58 AM – 02:14 PM), धनु लग्न (सायं 06:54 PM – 09:00 PM)",
+        auspiciousNoteHi: "उत्तराषाढ़ा नक्षत्र + ब्रह्म योग + गर करण — आषाढ़ मास का श्रेष्ठतम लग्न"
+      },
+      {
+        year: 2027,
+        month: 6,
+        day: 27,
+        lagnaWindowHi: "सिंह व कन्या लग्न (प्रातः 09:16 AM – 01:48 PM), कुंभ लग्न (रात्रि 10:30 PM – 12:02 AM)",
+        auspiciousNoteHi: "उत्तराभाद्रपद नक्षत्र + सौभाग्य योग + बालव करण — चातुर्मास पूर्व अंतिम श्रेष्ठ मुहूर्त"
+      },
+      // 2027 November
+      {
+        year: 2027,
+        month: 11,
+        day: 19,
+        lagnaWindowHi: "धनु व मकर लग्न (सायं 06:10 PM – 10:15 PM)",
+        auspiciousNoteHi: "पुष्य नक्षत्र + देवउठनी एकादशी पश्चात प्रथम शुद्ध विवाह लग्न"
+      },
+      {
+        year: 2027,
+        month: 11,
+        day: 20,
+        lagnaWindowHi: "कुंभ व मीन लग्न (रात्रि 10:40 PM – 02:10 AM)",
+        auspiciousNoteHi: "मघा नक्षत्र + सिद्धि योग — शनिवार सौभाग्यशाली लग्न"
+      },
+      {
+        year: 2027,
+        month: 11,
+        day: 24,
+        lagnaWindowHi: "वृषभ व मिथुन लग्न (प्रातः 07:30 AM – 11:00 AM)",
+        auspiciousNoteHi: "हस्त नक्षत्र + तैतिल करण — बुधवार सर्वार्थ सिद्धि योग"
+      },
+      {
+        year: 2027,
+        month: 11,
+        day: 25,
+        lagnaWindowHi: "कर्क व सिंह लग्न (प्रातः 10:00 AM – 02:15 PM)",
+        auspiciousNoteHi: "चित्रा नक्षत्र + वणिज करण — गुरुवार गुरु बल युक्त विवाह लग्न"
+      },
+      {
+        year: 2027,
+        month: 11,
+        day: 29,
+        lagnaWindowHi: "तुला व वृश्चिक लग्न (दोपहर 03:15 PM – 07:25 PM)",
+        auspiciousNoteHi: "अनुराधा नक्षत्र + शोभन योग — मार्गशीर्ष शुक्ल पक्ष शुभ लग्न"
+      },
+      // 2027 December
+      {
+        year: 2027,
+        month: 12,
+        day: 1,
+        lagnaWindowHi: "धनु लग्न (सायं 05:40 PM – 07:45 PM), मीन लग्न (रात्रि 11:30 PM – 01:00 AM)",
+        auspiciousNoteHi: "मूल नक्षत्र + साध्य योग — बुधवार शुद्ध लग्न मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 12,
+        day: 4,
+        lagnaWindowHi: "मकर व कुंभ लग्न (सायं 07:10 PM – 10:45 PM)",
+        auspiciousNoteHi: "श्रवण नक्षत्र + गर करण — शनिवार शनि-शुक्र शुभ संबंध"
+      },
+      {
+        year: 2027,
+        month: 12,
+        day: 5,
+        lagnaWindowHi: "मिथुन लग्न (प्रातः 08:40 AM – 10:50 AM), मीन लग्न (रात्रि 11:15 PM – 12:45 AM)",
+        auspiciousNoteHi: "धनिष्ठा नक्षत्र + शुभ योग — रविवार सर्वार्थ शुभ विवाह मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 12,
+        day: 9,
+        lagnaWindowHi: "कर्क लग्न (प्रातः 09:10 AM – 11:25 AM), धनु लग्न (सायं 05:15 PM – 07:20 PM)",
+        auspiciousNoteHi: "रेवती नक्षत्र + बालव करण — गुरुवार बृहस्पति बल युक्त"
+      },
+      {
+        year: 2027,
+        month: 12,
+        day: 10,
+        lagnaWindowHi: "सिंह व कन्या लग्न (दोपहर 11:45 AM – 04:00 PM)",
+        auspiciousNoteHi: "अश्विनी नक्षत्र + सिद्धि योग — पौष संक्रांति पूर्व श्रेष्ठ मुहूर्त"
+      },
+      {
+        year: 2027,
+        month: 12,
+        day: 12,
+        lagnaWindowHi: "तुला लग्न (दोपहर 02:40 PM – 04:55 PM), कुंभ लग्न (रात्रि 09:15 PM – 10:50 PM)",
+        auspiciousNoteHi: "रोहिणी नक्षत्र + शोभन योग — वर्ष 2027 का अंतिम महा-शुभ विवाह लग्न"
+      }
+    ];
+    const monthNames = ["", "जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
+    const computed = candidates.map((c) => {
+      const p = buildSingleDayPanchang(c.year, c.month, c.day, true);
+      return {
+        ...c,
+        monthLabelHi: `${monthNames[c.month]} ${c.year}`,
+        panchang: p
+      };
+    });
+    w.__PJ_VIVAH_CACHE__ = computed;
+    return computed;
+  }, [activeSlug, viewAllMode]);
+  const filteredVivahList = reactExports.useMemo(() => {
+    return vivahAllList.filter((item) => {
+      if (vivahYearFilter !== "all" && String(item.year) !== vivahYearFilter) return false;
+      if (vivahMonthFilter !== "all" && String(item.month) !== vivahMonthFilter) return false;
+      return true;
+    });
+  }, [vivahAllList, vivahYearFilter, vivahMonthFilter]);
+  const mundanMuhuratList = reactExports.useMemo(() => {
+    if (!viewAllMode && activeSlug !== "mundan-muhurat") return [];
+    const w = window;
+    if (w.__PJ_MUNDAN_CACHE__) return w.__PJ_MUNDAN_CACHE__;
+    const dates = [
+      { year: 2026, month: 11, day: 20, specialNote: "मार्गशीर्ष शुक्ल दशमी — उत्तराभाद्रपद/रेवती सौम्य नक्षत्र व तैतिल करण" },
+      { year: 2026, month: 11, day: 25, specialNote: "मार्गशीर्ष पूर्णिमा पूर्व शुभ रोहिणी नक्षत्र व बव करण" },
+      { year: 2026, month: 12, day: 4, specialNote: "पौष मास — हस्त नक्षत्र एवं कौलव करण (भद्रा रहित श्रेष्ठ दिन)" },
+      { year: 2026, month: 12, day: 11, specialNote: "धनिष्ठा/शतभिषा नक्षत्र एवं गर करण — दीर्घायु एवं आरोग्य प्रदायक" },
+      { year: 2027, month: 1, day: 18, specialNote: "उत्तरायण मकर संक्रांति पश्चात माघ मास — अश्विनी/रोहिणी शुभ संयोग" },
+      { year: 2027, month: 2, day: 10, specialNote: "माघ शुक्ल पक्ष — रेवती/अश्विनी नक्षत्र एवं बालव करण" },
+      { year: 2027, month: 2, day: 18, specialNote: "फाल्गुन मास — पुनर्वसु/पुष्य नक्षत्र एवं कौलव करण (सर्वश्रेष्ठ चूड़ाकरण)" },
+      { year: 2027, month: 4, day: 26, specialNote: "वैशाख मास — अनुराधा/मूलोत्तर शुभ नक्षत्र एवं वणिज करण" },
+      { year: 2027, month: 5, day: 8, specialNote: "वैशाख शुक्ल द्वितीया — रोहिणी नक्षत्र, शोभन योग एवं कौलव करण" },
+      { year: 2027, month: 5, day: 17, specialNote: "वैशाख शुक्ल द्वादशी — हस्त नक्षत्र, सिद्धि योग एवं बालव करण" },
+      { year: 2027, month: 6, day: 1, specialNote: "ज्येष्ठ मास — रेवती नक्षत्र, सौभाग्य योग एवं बालव करण" },
+      { year: 2027, month: 6, day: 15, specialNote: "ज्येष्ठ शुक्ल द्वादशी — स्वाति नक्षत्र एवं बव करण" }
+    ];
+    const computed = dates.map((d) => ({
+      ...d,
+      panchang: buildSingleDayPanchang(d.year, d.month, d.day, true)
+    }));
+    w.__PJ_MUNDAN_CACHE__ = computed;
+    return computed;
+  }, [activeSlug, viewAllMode]);
+  const allDaysVehicleMuhuratList = reactExports.useMemo(() => {
+    if (!viewAllMode && activeSlug !== "vahan-kharidne-ka-muhurat") return [];
+    const w = window;
+    if (w.__PJ_VEHICLE_CACHE__) return w.__PJ_VEHICLE_CACHE__;
+    const results = [];
+    const dayBadges = {
+      0: { name: "रविवार (Sun)", badge: "रवि-पुष्य / सर्वार्थ शुभ योग", choghadiya: "प्रातः 07:30 AM – 12:00 PM (चर, लाभ, अमृत)" },
+      1: { name: "सोमवार (Mon)", badge: "अमृत सिद्धि / चंद्र बल योग", choghadiya: "प्रातः 09:00 AM – 10:30 AM (अमृत) व दोपहर 01:30 PM – 03:00 PM (शुभ)" },
+      2: { name: "मंगलवार (Tue)", badge: "भूमिपुत्र / कमर्शियल वाहन योग", choghadiya: "प्रातः 10:30 AM – 12:00 PM (लाभ) व दोपहर 03:00 PM – 04:30 PM (शुभ)" },
+      3: { name: "बुधवार (Wed)", badge: "सर्वार्थ सिद्धि / बुध लाभ योग", choghadiya: "प्रातः 07:30 AM – 09:00 AM (लाभ) व प्रातः 10:30 AM – 12:00 PM (अमृत)" },
+      4: { name: "गुरुवार (Thu)", badge: "गुरु-पुष्य / महालक्ष्मी योग", choghadiya: "प्रातः 06:30 AM – 08:00 AM (शुभ) व दोपहर 12:00 PM – 03:00 PM (लाभ, अमृत)" },
+      5: { name: "शुक्रवार (Fri)", badge: "शुक्र-सौभाग्य / विलासिता वाहन योग", choghadiya: "प्रातः 07:30 AM – 10:30 AM (लाभ, अमृत) व दोपहर 12:00 PM – 01:30 PM (शुभ)" },
+      6: { name: "शनिवार (Sat)", badge: "शनि कृपा / भारी वाहन-लोहा योग", choghadiya: "प्रातः 09:00 AM – 10:30 AM (शुभ) व दोपहर 01:30 PM – 04:30 PM (लाभ, अमृत)" }
+    };
+    const curatedVehicleDates = [
+      // Sundays (0)
+      [2026, 11, 22],
+      [2027, 1, 17],
+      [2027, 2, 14],
+      [2027, 5, 9],
+      // Mondays (1)
+      [2026, 11, 23],
+      [2027, 1, 18],
+      [2027, 2, 1],
+      [2027, 5, 17],
+      // Tuesdays (2)
+      [2026, 11, 24],
+      [2027, 4, 20],
+      [2027, 5, 4],
+      [2027, 6, 15],
+      // Wednesdays (3)
+      [2026, 11, 25],
+      [2026, 12, 9],
+      [2027, 2, 10],
+      [2027, 4, 21],
+      // Thursdays (4)
+      [2026, 12, 10],
+      [2027, 2, 18],
+      [2027, 5, 6],
+      [2027, 6, 10],
+      // Fridays (5)
+      [2026, 11, 27],
+      [2026, 12, 4],
+      [2027, 4, 30],
+      [2027, 5, 21],
+      // Saturdays (6)
+      [2026, 11, 28],
+      [2027, 1, 23],
+      [2027, 5, 8],
+      [2027, 6, 5]
+    ];
+    for (const [yr, mo, d] of curatedVehicleDates) {
+      const p = buildSingleDayPanchang(yr, mo, d, true);
+      const dayInfo = dayBadges[p.weekdayIndex] || {
+        name: p.vaarHindi,
+        badge: "शुभ वाहन योग",
+        choghadiya: "प्रातः लाभ व अमृत चौघड़िया"
+      };
+      const isPushya = p.nakshatra.includes("पुष्य");
+      const isSundayPushya = p.weekdayIndex === 0 && isPushya;
+      const isGuruPushya = p.weekdayIndex === 4 && isPushya;
+      results.push({
+        year: yr,
+        month: mo,
+        day: d,
+        weekdayIndex: p.weekdayIndex,
+        dayNameHi: dayInfo.name,
+        panchang: p,
+        yogaBadge: isSundayPushya ? "रवि-पुष्य महायोग (परम श्रेष्ठ)" : isGuruPushya ? "गुरु-पुष्य महायोग (अति दुर्लभ)" : dayInfo.badge,
+        bestChoghadiya: `${dayInfo.choghadiya} एवं अभिजित (${p.abhijitMuhurat})`
+      });
+    }
+    w.__PJ_VEHICLE_CACHE__ = results;
+    return results;
+  }, [activeSlug, viewAllMode]);
+  const filteredVehicleList = reactExports.useMemo(() => {
+    if (vahanDayFilter === "all") return allDaysVehicleMuhuratList.slice(0, 24);
+    return allDaysVehicleMuhuratList.filter((item) => item.weekdayIndex === vahanDayFilter).slice(0, 16);
+  }, [allDaysVehicleMuhuratList, vahanDayFilter]);
+  const currentMeta = VEDIC_SEO_TOPICS_META[activeSlug] || VEDIC_SEO_TOPICS_META["vivah-muhurat-2027"];
+  const buildTopicJsonLd = (meta) => {
+    const canonicalUrl = `https://www.panditjionline.online${meta.canonicalPath}`;
+    return JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": `${canonicalUrl}#article`,
+          headline: meta.h1,
+          name: meta.metaTitle,
+          description: meta.metaDescription,
+          url: canonicalUrl,
+          image: "https://www.panditjionline.online/og-card/home-discover-v42.jpg",
+          inLanguage: "hi-IN",
+          datePublished: meta.publishedDate,
+          dateModified: meta.modifiedDate,
+          license: "https://www.panditjionline.online/terms-and-conditions",
+          creator: {
+            "@type": "Person",
+            name: "Acharya Pandit Shashank Sharma"
+          },
+          isPartOf: {
+            "@type": "WebSite",
+            "@id": "https://www.panditjionline.online/#website",
+            url: "https://www.panditjionline.online/",
+            name: "Pandit Ji Online",
+            alternateName: "पंडित जी ऑनलाइन - आचार्य पंडित शशांक शर्मा",
+            inLanguage: "hi-IN"
+          },
+          author: {
+            "@type": "Person",
+            name: "Acharya Pandit Shashank Sharma",
+            jobTitle: "Vedic Astrologer & Drik Panchang Expert",
+            url: "https://www.panditjionline.online/about-us"
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Pandit Ji Online (Rudrapur, Uttarakhand)",
+            url: "https://www.panditjionline.online/",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://www.panditjionline.online/pwa-512x512.png"
+            }
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": canonicalUrl
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": `${canonicalUrl}#faq`,
+          name: `${meta.metaTitle || meta.h1} — अक्सर पूछे जाने वाले प्रश्न (FAQ)`,
+          mainEntity: meta.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: f.answer
+            }
+          }))
+        }
+      ]
+    });
+  };
+  const shouldRenderTopic = (slug) => viewAllMode || activeSlug === slug;
+  reactExports.useEffect(() => {
+    if (!viewAllMode && activeSlug && typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [activeSlug, viewAllMode]);
+  if (!viewAllMode && ALL_UNIFIED_NAAM_RASHI_PROFILES[activeSlug]) {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(
+      UnifiedNaamRashiPageView,
+      {
+        slug: activeSlug,
+        onBack: () => {
+          onNavigateToTab("gyan-kosh");
+          if (typeof window !== "undefined") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        },
+        onSelectLetterSlug: (nextSlug) => {
+          if (VEDIC_SEO_TOPIC_SLUGS.includes(nextSlug)) {
+            onSelectTopic(nextSlug);
+          } else {
+            onNavigateToTab(nextSlug);
+          }
+        }
+      }
+    );
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6 sm:space-y-8 pb-10", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx("section", { className: "relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#231204] via-[#180d04] to-[#0e0905] border-2 border-[#FF6F00]/70 p-4 sm:p-5 shadow-[0_12px_35px_rgba(255,111,0,0.18)]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex flex-wrap items-center justify-between gap-3", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-2.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            type: "button",
+            onClick: () => {
+              onNavigateToTab("gyan-kosh");
+              if (typeof window !== "undefined") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            },
+            className: "inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-black text-xs sm:text-sm shadow-md border border-yellow-200 transition-all cursor-pointer",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-3.5 h-3.5 shrink-0", strokeWidth: 1.5 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "धर्म एवं ज्ञान कोष (सभी ५३ विषय देखें)" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FF6F00]/20 border border-[#FF6F00]/45 text-amber-200 text-xs font-extrabold", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-3.5 h-3.5 text-[#FF6F00]" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: currentMeta.shortLabelHi })
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            type: "button",
+            onClick: () => setViewAllMode((prev) => !prev),
+            className: `px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 border ${viewAllMode ? "bg-[#FF6F00] text-white border-amber-300 shadow-md" : "bg-amber-950/60 text-amber-200 border-amber-600/50 hover:border-amber-400"}`,
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Layers, { className: "w-3.5 h-3.5" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: viewAllMode ? "एकल पृष्ठ दृश्य" : "सभी ७ मुहूर्त-दोष पृष्ठ एक साथ" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          SocialShareBar,
+          {
+            activeTab: activeSlug,
+            customTitle: currentMeta.h1,
+            customDescription: currentMeta.metaDescription,
+            compact: true
+          }
+        )
+      ] })
+    ] }) }),
+    shouldRenderTopic("vivah-muhurat-2027") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "vivah-muhurat-2027",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["vivah-muhurat-2027"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "विक्रम संवत् २०८४ · दृक् गणित विवाह पंचांग · रुद्रपुर अक्षांश" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["vivah-muhurat-2027"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["vivah-muhurat-2027"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(VivahMuhuratPersonalCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(HeartHandshake, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "वर्ष 2026 और 2027 में विवाह मुहूर्त का ज्योतिषीय महत्व (सूर्य, गुरु व शुक्र बल विचार)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              "सनातन वैदिक परंपरा और ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "मुहूर्त चिंतामणि" }),
+              " के अनुसार पाणीग्रहण (विवाह) संस्कार के लिए",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "देवगुरु बृहस्पति और दैत्यगुरु शुक्राचार्य का उदित (तारा शुद्ध) होना" }),
+              " तथा सूर्य का मेष/वृषभ/मिथुन राशि में होना अनिवार्य है। वर्ष ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "2026 के नवंबर-दिसंबर" }),
+              " तथा वर्ष",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "2027 के जनवरी, फरवरी, अप्रैल, मई, जून, नवंबर व दिसंबर" }),
+              " मास में गुरु एवं शुक्र दोनों पूर्ण बली व उदित अवस्था में रहेंगे, जिससे इस कालखंड में किए गए विवाह अखंड सौभाग्य, वंश-वृद्धि और आर्थिक समृद्धि प्रदान करने वाले होंगे।"
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5 text-[#FF6F00]" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                  "वर्ष 2026 एवं 2027 विवाह मुहूर्त सारणी (कुल ",
+                  filteredVivahList.length,
+                  " शुभ तिथियां)"
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center gap-1.5 self-start sm:self-auto bg-black/50 p-1 rounded-xl border border-amber-800/50", children: ["all", "2026", "2027"].map((yr) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => {
+                    setVivahYearFilter(yr);
+                    setVivahMonthFilter("all");
+                  },
+                  className: `px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${vivahYearFilter === yr ? "bg-[#FF6F00] text-white shadow-sm" : "text-amber-200/80 hover:text-white"}`,
+                  children: yr === "all" ? "सभी वर्ष (2026 & 2027)" : `${yr} मुहूर्त`
+                },
+                yr
+              )) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center gap-1.5 pt-1 text-xs", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-amber-400/80 font-medium mr-1", children: "माह चुनें:" }),
+              [
+                { id: "all", label: "सभी माह" },
+                ...vivahYearFilter === "all" || vivahYearFilter === "2026" ? [
+                  { id: "11", label: "नवंबर" },
+                  { id: "12", label: "दिसंबर" }
+                ] : [],
+                ...vivahYearFilter === "all" || vivahYearFilter === "2027" ? [
+                  { id: "1", label: "जनवरी" },
+                  { id: "2", label: "फरवरी" },
+                  { id: "4", label: "अप्रैल" },
+                  { id: "5", label: "मई" },
+                  { id: "6", label: "जून" },
+                  { id: "11", label: "नवंबर" },
+                  { id: "12", label: "दिसंबर" }
+                ] : []
+              ].filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i).map((m) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => setVivahMonthFilter(m.id),
+                  className: `px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${vivahMonthFilter === m.id ? "bg-amber-600 text-white" : "bg-amber-950/40 text-amber-200/80 border border-amber-800/40 hover:border-amber-600"}`,
+                  children: m.label
+                },
+                m.id
+              ))
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "दिनांक एवं वार" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "हिन्दू मास एवं तिथि" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शुभ विवाह नक्षत्र एवं योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शुभ विवाह लग्न समय (IST)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "विशेष शास्त्रीय फल" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: filteredVivahList.map((row) => {
+                const isoDate = `${row.year}-${String(row.month).padStart(2, "0")}-${String(row.day).padStart(2, "0")}`;
+                return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "tr",
+                  {
+                    className: "hover:bg-amber-950/25 transition-colors",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 align-top font-semibold text-amber-100 whitespace-nowrap", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: row.panchang.formattedDateHindi }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[11px] text-[#FF6F00] font-bold", children: [
+                          row.panchang.vaarHindi,
+                          " (",
+                          isoDate,
+                          ")"
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 align-top text-slate-200", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "font-medium text-amber-200", children: [
+                          row.panchang.hinduMaas,
+                          " · ",
+                          row.panchang.paksha
+                        ] }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-slate-300", children: row.panchang.tithiName })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 align-top text-slate-200", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-semibold text-emerald-300", children: row.panchang.nakshatra }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[11px] text-slate-400", children: [
+                          row.panchang.yoga,
+                          " · ",
+                          row.panchang.karana
+                        ] })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 align-top text-amber-100 font-medium", children: row.lagnaWindowHi }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 align-top text-xs text-amber-200/90", children: row.auspiciousNoteHi })
+                    ]
+                  },
+                  isoDate
+                );
+              }) })
+            ] }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 pt-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "१. विवाह लग्न शुद्धि के अनिवार्य नियम (सप्तम व अष्टम भाव शुद्धि)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "सप्तम एवं अष्टम भाव खाली हों" }),
+                  ": पाणिग्रहण लग्न कुंडली में सप्तम भाव (दाम्पत्य) और अष्टम भाव (मांगल्य/आयु) में कोई भी क्रूर ग्रह (मंगल, शनि, राहु, केतु, सूर्य) नहीं होना चाहिए।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "त्रिबल शुद्धि (सूर्य, चंद्र व गुरु बल)" }),
+                  ": कन्या के लिए गोचर में देवगुरु बृहस्पति का बल (द्वितीय, पंचम, सप्तम, नवम, एकादश भाव) और वर के लिए सूर्य बल देखा जाता है।"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "२. जून २०२७ के बाद चातुर्मास में विवाह क्यों नहीं होंगे?" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs sm:text-sm text-slate-300 leading-relaxed", children: [
+                "आषाढ़ शुक्ल एकादशी (",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "देवशयनी एकादशी — जुलाई 2027" }),
+                ") से भगवान श्री हरि विष्णु चार मास के लिए योगनिद्रा में चले जाते हैं। अतः जुलाई, अगस्त, सितंबर और अक्टूबर 2027 में विवाह संस्कार वर्जित रहेंगे और पुनः ",
+                /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "देवउठनी एकादशी (नवंबर 2027)" }),
+                " से विवाह मुहूर्त आरम्भ होंगे।"
+              ] })
+            ] })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("mundan-muhurat") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "mundan-muhurat",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["mundan-muhurat"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "चूड़ाकरण संस्कार (शिशु मुंडन) · करण एवं नक्षत्र निर्णय · शास्त्रोक्त विधान" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["mundan-muhurat"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["mundan-muhurat"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(MundanMuhuratPersonalCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-emerald-700/40 p-4 space-y-2.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-base sm:text-lg font-bold font-vedic text-emerald-300 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(CircleCheck, { className: "w-5 h-5 text-emerald-400" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "मुंडन हेतु शुभ नक्षत्र एवं शुभ करण (Shubh Nakshatra & Karana)" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-200", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "• ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "१२ सर्वश्रेष्ठ मुंडन नक्षत्र" }),
+                  ": अश्विनी, मृगशिरा, पुनर्वसु, पुष्य, हस्त, चित्रा, स्वाति, ज्येष्ठा (विशेष परिहार सहित), श्रवण, धनिष्ठा, शतभिषा और रेवती।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "• ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "६ शुभ चर करण" }),
+                  ": ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "बव, बालव, कौलव, तैतिल, गर और वणिज" }),
+                  "। इन ६ करणों में शिशु का चूड़ाकरण संस्कार करने से बल, बुद्धि, तेज और दीर्घायु की वृद्धि होती है।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "• ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "शुभ वार एवं तिथियां" }),
+                  ": सोमवार, बुधवार, गुरुवार व शुक्रवार तथा द्वितीया (2), तृतीया (3), पंचमी (5), सप्तमी (7), दशमी (10), एकादशी (11), द्वादशी (12) और त्रयोदशी (13) तिथि।"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-red-800/50 p-4 space-y-2.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-base sm:text-lg font-bold font-vedic text-red-300 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(TriangleAlert, { className: "w-5 h-5 text-red-400" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "मुंडन में पूर्णतः वर्जित करण, नक्षत्र एवं काल (Varjit Kaal)" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-200", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "• ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "वर्जित करण" }),
+                  ": ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "विष्टि (भद्रा) करण" }),
+                  " तथा ४ स्थिर करण (शकुनि, चतुष्पद, नाग, किंस्तुघ्न) में मुंडन कदापि न करें।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "• ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "वर्जित मास एवं पक्ष" }),
+                  ": चैत्र मास, खरमास (धनु/मीन संक्रांति), चातुर्मास और शिशु का",
+                  " ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "जन्म मास व जन्म नक्षत्र" }),
+                  "।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "• ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "गर्भवती माता नियम" }),
+                  ": यदि शिशु की माता ५ माह से अधिक की गर्भवती हों, तो उस शिशु का मुंडन संस्कार नहीं किया जाता।"
+                ] })
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Scissors, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "करण और नक्षत्र के अनुसार मुंडन मुहूर्त तिथियां (2026–2027)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "दिनांक एवं वार" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "मास, पक्ष एवं तिथि" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "नक्षत्र" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "करण एवं योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "अभिजित / श्रेष्ठ समय" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: mundanMuhuratList.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-amber-950/25 transition-colors", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 font-semibold text-amber-100 whitespace-nowrap", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: item.panchang.formattedDateHindi }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-[#FF6F00]", children: item.panchang.vaarHindi })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 text-slate-200", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    item.panchang.hinduMaas,
+                    " (",
+                    item.panchang.paksha,
+                    ")"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-amber-200/80", children: item.panchang.tithiName })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-emerald-300 font-medium", children: item.panchang.nakshatra }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 text-slate-200", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-semibold text-amber-200", children: item.panchang.karana }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-slate-400", children: item.panchang.yoga })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 text-xs text-amber-100", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-yellow-300", children: item.panchang.abhijitMuhurat }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-400 mt-0.5", children: item.specialNote })
+                ] })
+              ] }, `${item.year}-${item.month}-${item.day}`)) })
+            ] }) })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("vahan-kharidne-ka-muhurat") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "vahan-kharidne-ka-muhurat",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["vahan-kharidne-ka-muhurat"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "सोमवार से रविवार वाहन क्रय मुहूर्त · रवि-पुष्य व दैनिक चौघड़िया · दृक् पंचांग" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["vahan-kharidne-ka-muhurat"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["vahan-kharidne-ka-muhurat"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(VahanKharidPersonalCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Car, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "सप्ताह के सातों दिनों (सोमवार से रविवार) में वाहन क्रय का शास्त्रीय विधान" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "१. रविवार (Sunday) — रवि-पुष्य व प्रतिष्ठा योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "कार, लग्जरी वाहन व सरकारी कार्य हेतु अति शुभ। राहुकाल (04:30 PM–06:00 PM) छोड़कर अमृत व लाभ चौघड़िया में लें।" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "२. सोमवार (Monday) — चंद्र बल व मानसिक शांति" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "पारिवारिक कार, सफेद रंग का वाहन व दोपहिया के लिए उत्तम। शुभ चौघड़िया: 09:00 AM – 10:30 AM (अमृत)।" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "३. मंगलवार (Tuesday) — भूमिपुत्र व कमर्शियल योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "निजी लग्जरी कार के बजाय निर्माण, लोडिंग व कमर्शियल वाहन के लिए विशेष सिद्ध। दोपहर लाभ चौघड़िया उपयुक्त।" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "४. बुधवार (Wednesday) — व्यापार व सर्वार्थ सिद्धि" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "व्यापारिक कार्य, डिलीवरी वैन, सेल्स कार व सामान्य सवारी हेतु अत्यंत शुभ। प्रातः लाभ व अमृत चौघड़िया सर्वोत्तम।" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "५. गुरुवार (Thursday) — गुरु-पुष्य व दीर्घायु योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "परिवार व बच्चों की सुरक्षा के लिए स्वर्ण सदृश महाशुभ। दोपहर 12:00 PM – 03:00 PM (लाभ/अमृत) में डिलीवरी लें।" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "६. शुक्रवार (Friday) — महालक्ष्मी व ऐश्वर्य योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "लक्जरी कार, स्पोर्ट्स बाइक, सुंदर डिजाइन वाहन हेतु सर्वश्रेष्ठ दिन। लाभ व अमृत चौघड़िया अति फलदायी।" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-xl bg-[#140e07] border border-amber-800/40 p-3 space-y-1 sm:col-span-2 lg:col-span-3", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-bold text-amber-300", children: "७. शनिवार (Saturday) — शनि कृपा, कृषि उपकरण व भारी वाहन नियम" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-slate-300", children: "लोहा व मशीनरी शनि के अधीन है। ट्रैक्टर, क्रेन, ट्रक व भारी लोहे के कमर्शियल वाहन शनिवार को खरीदना विशेष लाभकारी होता है। डिलीवरी पूर्व हनुमान जी या शनि मंदिर में तेल-तिल अर्पित करें।" })
+              ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5 text-[#FF6F00]" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "वाहन खरीद शुभ तिथियां एवं चौघड़िया सारणी (2026–2027)" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-wrap items-center gap-1 bg-black/50 p-1 rounded-xl border border-amber-800/50 text-xs", children: [
+                { id: "all", label: "सभी ७ दिन" },
+                { id: 0, label: "रवि (Sun)" },
+                { id: 1, label: "सोम (Mon)" },
+                { id: 2, label: "मंगल (Tue)" },
+                { id: 3, label: "बुध (Wed)" },
+                { id: 4, label: "गुरु (Thu)" },
+                { id: 5, label: "शुक्र (Fri)" },
+                { id: 6, label: "शनि (Sat)" }
+              ].map((d) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => setVahanDayFilter(d.id),
+                  className: `px-2.5 py-1 rounded-lg font-bold transition-all cursor-pointer ${vahanDayFilter === d.id ? "bg-[#FF6F00] text-white shadow-sm" : "text-amber-200/80 hover:text-white"}`,
+                  children: d.label
+                },
+                String(d.id)
+              )) })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "दिनांक एवं वार" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "हिन्दू मास एवं तिथि" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शुभ नक्षत्र एवं योग" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "डिलीवरी का शुभ चौघड़िया (IST)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "राहुकाल (वर्जित समय)" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: filteredVehicleList.map((item) => {
+                const isoDate = `${item.year}-${String(item.month).padStart(2, "0")}-${String(item.day).padStart(2, "0")}`;
+                return /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-amber-950/25 transition-colors", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 font-semibold text-amber-100 whitespace-nowrap", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: item.panchang.formattedDateHindi }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-[11px] text-[#FF6F00] font-bold", children: [
+                      item.dayNameHi,
+                      " (",
+                      isoDate,
+                      ")"
+                    ] })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 text-slate-200", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      item.panchang.hinduMaas,
+                      " · ",
+                      item.panchang.paksha
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs text-amber-200", children: item.panchang.tithiName })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("td", { className: "p-3 text-slate-200", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "font-semibold text-emerald-300", children: item.panchang.nakshatra }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-amber-300/90", children: item.yogaBadge })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-xs text-amber-100 font-medium", children: item.bestChoghadiya }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-xs text-red-300 whitespace-nowrap", children: item.panchang.rahuKaal })
+                ] }, isoDate);
+              }) })
+            ] }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "वाहन डिलीवरी लेते समय ध्यान रखने योग्य ३ मुख्य वैदिक नियम" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs sm:text-sm text-slate-300 leading-relaxed", children: [
+              "१. जिस भी दिन वाहन लें, उस दिन के ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "राहुकाल" }),
+              " (जैसे रविवार 04:30-06:00 PM, मंगलवार 03:00-04:30 PM, शुक्रवार 10:30-12:00 PM) की अवधि में शोरूम से वाहन बाहर न निकालें। २. वाहन पूजन के समय बोनट पर केसर/रोली से स्वस्तिक बनाकर भगवान श्री गणेश और हनुमान जी का स्मरण करें। ३. वाहन में सुरक्षा कवच के रूप में पंचमुखी हनुमान जी, श्री यंत्र या मोरपंख स्थापित करें।"
+            ] })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("s-naam-rashi-swabhav") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "s-naam-rashi-swabhav",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["s-naam-rashi-swabhav"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "A से Z व अ से ह नामाक्षर विज्ञान · १२ राशियां, स्वामी व स्वभाव · दृक् पंचांग" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["s-naam-rashi-swabhav"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["s-naam-rashi-swabhav"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(AllLettersNaamRashiAnalyzer, { onConsultPanditJi: onAskPanditInChat, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3", children: [
+            { label: "मुख्य वैदिक राशि", value: "कुंभ राशि (Aquarius)" },
+            { label: "राशि स्वामी (Lord)", value: "कर्मफलदाता शनि देव (Saturn)" },
+            { label: "तत्व एवं स्वभाव", value: "वायु तत्व (Air) · स्थिर राशि" },
+            { label: "नक्षत्र एवं चरण", value: "शतभिषा (4 चरण) व पूर्वाभाद्रपद (3 चरण)" },
+            { label: "शुभ रत्न (Gemstone)", value: "नीलम (Blue Sapphire) / लाजवर्त" },
+            { label: "शुभ अंक (Lucky No.)", value: "8, 4, 6 और 17" },
+            { label: "शुभ रंग एवं वार", value: "नीला, काला, बैंगनी · शनिवार व शुक्रवार" },
+            { label: "सिद्ध बीज मंत्र", value: "ॐ शं शनैश्चराय नमः" }
+          ].map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-3.5 space-y-1",
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-amber-400/80", children: stat.label }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-bold text-amber-100", children: stat.value })
+              ]
+            },
+            stat.label
+          )) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(UserCheck, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "'S' (स, सा, सी, सू, से, सो) नाम वालों का 100% सटीक स्वभाव एवं व्यक्तित्व" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              "वैदिक स्वर सिद्धांत के अनुसार जिन व्यक्तियों का नाम अंग्रेजी के ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'S' अक्षर" }),
+              " (हिंदी में",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "स, सा, सी, सू, से, सो" }),
+              " — जैसे ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "सुमित, सौरभ, संजय, संदीप, साक्षी, स्नेहा, सोनिया, सतीश" }),
+              ") से प्रारंभ होता है, उनकी नाम राशि ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "कुंभ (Aquarius)" }),
+              " होती है। (नोट: यदि नाम ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'श'" }),
+              " ",
+              "जैसे ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("em", { children: "शिवम, शुभम, शशांक, श्वेता" }),
+              " से हो तो श्रवण/धनिष्ठा नक्षत्र के कारण ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "मकर राशि" }),
+              " ",
+              "होती है, और दोनों ही राशियों के स्वामी ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "शनि देव" }),
+              " हैं)।"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "१. स्वभाव एवं मानसिक विशेषताएं (Personality Traits)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "दिल के साफ पर स्वाभिमानी" }),
+                    ": 'S' नाम वाले लोग भीतर से अत्यंत संवेदनशील और परोपकारी होते हैं, परंतु अपने आत्मसम्मान (Self-respect) से कभी समझौता नहीं करते।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "स्वमेहनत से भाग्योदय" }),
+                    ": शनि देव के प्रभाव से इन्हें बिना मेहनत के कुछ नहीं मिलता, किंतु अपनी लगन से ये शून्य से शिखर तक का सफर तय करते हैं।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "गंभीर चिंतक एवं रहस्यमयी" }),
+                    ": वायु तत्व होने के कारण इनकी कल्पनाशक्ति व निर्णय क्षमता तीव्र होती है; ये अपने मन की बात हर किसी से साझा नहीं करते।"
+                  ] })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "२. करियर, धन एवं वैवाहिक जीवन (Career & Love Life)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "करियर व व्यापार" }),
+                    ": प्रशासन (IAS/PCS/Police), इंजीनियरिंग, आईटी, वकालत, चिकित्सा, फाइनेंस और स्वतंत्र व्यापार में ये विशेष सफलता प्राप्त करते हैं। 26, 28, 33 और 36वें वर्ष में इनका बड़ा भाग्योदय होता है।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "प्रेम एवं दाम्पत्य" }),
+                    ": ये दिखावे के प्रेम में विश्वास नहीं रखते। जिस भी रिश्ते में जुड़ते हैं, उसे जीवनभर पूरी निष्ठा और ईमानदारी से निभाते हैं।"
+                  ] })
+                ] })
+              ] })
+            ] })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("shani-sadesati-upay") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "shani-sadesati-upay",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["shani-sadesati-upay"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "शनि साढ़ेसाती एवं कंकाली ढैय्या निवारण · ३ चरण प्रभाव एवं सात्विक वैदिक उपाय" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["shani-sadesati-upay"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["shani-sadesati-upay"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ShaniSadesatiCheckerCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Flame, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "कंकाली दशा एवं शनि साढ़ेसाती के लक्षण और ३ चरणों का प्रभाव" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              "लोकभाषा में जब शनि की साढ़ेसाती का ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "शिखर चरण (द्वितीय ढाई वर्ष)" }),
+              " या",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "अष्टम कंटक शनि (ढैय्या)" }),
+              " लौह पाये पर आता है और अचानक आर्थिक तंगी, कर्ज, झूठे आक्षेप या स्वास्थ्य कष्ट देता है, तो उसे ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "'कंकाली शनि' या 'कंटक साढ़ेसाती'" }),
+              " कहा जाता है। वास्तव में शनि देव शत्रु नहीं अपितु ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "न्यायाधीश (दण्डाधिकारी)" }),
+              " हैं जो जातक के अहंकार को मिटाकर उसे अनुशासन और सत्कर्म की ओर मोड़ते हैं।"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm sm:text-base font-bold font-vedic text-amber-300", children: "प्रथम चरण (उदय चरण - मस्तक पर)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-slate-300", children: [
+                  "चन्द्र से १२वें भाव में शनि (वर्तमान में ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "मेष राशि" }),
+                  "): अनावश्यक खर्च, यात्राएं, नेत्र व नींद संबंधी कष्ट तथा कार्यक्षेत्र में स्थान परिवर्तन के योग।"
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm sm:text-base font-bold font-vedic text-amber-300", children: "द्वितीय चरण (शिखर चरण - हृदय पर)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-slate-300", children: [
+                  "जन्म चन्द्र राशि पर शनि (वर्तमान में ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "मीन राशि" }),
+                  "): मानसिक दबाव, परिश्रम की अधिकता, पारिवारिक जिम्मेदारी एवं स्वास्थ्य के प्रति सावधानी आवश्यक।"
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-sm sm:text-base font-bold font-vedic text-amber-300", children: "तृतीय चरण (अस्त चरण - चरणों पर)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-xs text-slate-300", children: [
+                  "चन्द्र से द्वितीय भाव में शनि (वर्तमान में ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "कुंभ राशि" }),
+                  "): संघर्षों का समापन, रुके हुए धन की वापसी और जाते-जाते शनि देव द्वारा स्थायी सुख-संपत्ति का आशीर्वाद।"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 pt-2", children: "शनि साढ़ेसाती व कंकाली पीड़ा से बचने के 7 अचूक शास्त्रीय उपाय" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm", children: [
+              {
+                title: "१. छाया पात्र दान (Chhaya Patra Daan)",
+                desc: "शनिवार को कांसे या लोहे की कटोरी में सरसों का तेल भरकर उसमें एक सिक्का डालें और अपना मुख देखकर किसी जरूरतमंद या शनि मंदिर में दान करें।"
+              },
+              {
+                title: "२. राजा दशरथ कृत शनि स्तोत्र एवं सुंदरकांड",
+                desc: 'प्रत्येक शनिवार व मंगलवार को श्री हनुमान चालीसा (७ बार) या सुंदरकांड तथा दशरथ कृत शनि स्तोत्र ("नमः कृष्णाय नीलाय...") का पाठ करें। हनुमान भक्तों को शनि कभी पीड़ित नहीं करते।'
+              },
+              {
+                title: "३. पीपल एवं शमी वृक्ष दीपदान",
+                desc: "शनिवार की संध्या (सूर्यास्त के बाद) पीपल या शमी वृक्ष के नीचे सरसों के तेल में काले तिल डालकर चौमुखी दीपक जलाएं और ७ परिक्रमा करें।"
+              },
+              {
+                title: "४. सप्तधान्य एवं काली उड़द खिचड़ी सेवा",
+                desc: "शनिवार को कुष्ठ रोगियों, दिव्यांगजनों या सफाई कर्मियों को काली उड़द की खिचड़ी, काले चने, कंबल या चरण-पादुका (जूते/चप्पल) का दान करें।"
+              },
+              {
+                title: "५. भगवान शिव का काले तिल से अभिषेक",
+                desc: "शनि देव के गुरु भगवान आशुतोष शिव हैं। शनिवार व प्रदोष को जल में काले तिल मिलाकर शिवलिंग का अभिषेक करें और महामृत्युंजय मंत्र जपें।"
+              },
+              {
+                title: "६. आचरण शुद्धि एवं वैदिक बीज मंत्र",
+                desc: 'साढ़ेसाती में मांस-मदिरा, जुआ, परनिंदा और किसी गरीब के हक का धन लेने से बचें। नित्य प्रातः व संध्या १०८ बार "ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः" का जप करें।'
+              }
+            ].map((remedy) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-3.5 space-y-1",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-amber-200", children: remedy.title }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300 leading-relaxed", children: remedy.desc })
+                ]
+              },
+              remedy.title
+            )) })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("manglik-dosh-nivaran") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "manglik-dosh-nivaran",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["manglik-dosh-nivaran"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "कुज/मंगल दोष सत्य बनाम भ्रम (Myth vs Reality) · पराशरी परिहार एवं कुंभ विवाह" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["manglik-dosh-nivaran"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["manglik-dosh-nivaran"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ManglikDoshParikshanCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "क्या मांगलिक दोष सच में विवाह में बड़ा दोष है? (Myth vs Vedic Reality)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              "समाज में ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "मांगलिक दोष (Kuja Dosha)" }),
+              " को लेकर अनावश्यक भय फैलाया जाता है, जबकि गणितीय दृष्टि से १२ भावों में से ५ भावों (",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "प्रथम, चतुर्थ, सप्तम, अष्टम और द्वादश भाव" }),
+              ") में मंगल होने से लगभग",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "४०% से अधिक कुंडलियां" }),
+              " तकनीकी रूप से मांगलिक निकलती हैं! महर्षि पराशर और",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "अगस्त्य संहिता" }),
+              " स्पष्ट कहते हैं कि केवल १, ४, ७, ८, १२ भाव में मंगल देखकर अच्छे रिश्ते को ठुकराना अज्ञानता है, क्योंकि अधिकांश कुंडलियों में मंगल दोष का ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "स्वतः परिहार (Cancellation)" }),
+              " ",
+              "मौजूद होता है।"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "मंगल का भाव" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "सप्तम भाव से संबंध व दृष्टि" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "व्यावहारिक प्रभाव" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("tbody", { className: "divide-y divide-amber-900/30", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-semibold text-amber-100", children: "प्रथम भाव (लग्न)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: "सातवीं पूर्ण दृष्टि सप्तम (विवाह) भाव पर" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-300", children: "जातक में स्वाभिमान, उग्रता और नेतृत्व की प्रबल भावना" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-semibold text-amber-100", children: "चतुर्थ भाव (सुख)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: "चौथी दृष्टि सप्तम भाव पर" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-300", children: "गृह-सुख में कभी-कभी वैचारिक मतभेद या स्थान परिवर्तन" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-semibold text-amber-100", children: "सप्तम भाव (विवाह)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: "स्वयं दांपत्य भाव में स्थित" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-300", children: "जीवनसाथी के साथ अहं (Ego) का टकराव यदि सामंजस्य न हो" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-semibold text-amber-100", children: "अष्टम भाव (मांगल्य)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: "सातवीं दृष्टि द्वितीय (कुटुम्ब/वाणी) भाव पर" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-300", children: "तीखी वाणी एवं ससुराल पक्ष के साथ धैर्य की आवश्यकता" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-semibold text-amber-100", children: "द्वादश भाव (व्यय/शयन)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: "आठवीं दृष्टि सप्तम भाव पर" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-300", children: "खर्च की अधिकता एवं भावात्मक संतुलन की आवश्यकता" })
+                ] })
+              ] })
+            ] }) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 pt-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-emerald-700/40 p-4 space-y-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-emerald-300", children: "मांगलिक दोष भंग होने के ६ प्रमुख शास्त्रीय नियम" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    "यदि मंगल अपनी ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "स्वराशि (मेष या वृश्चिक)" }),
+                    " अथवा ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "उच्च राशि (मकर)" }),
+                    " या मित्र राशि (सिंह, धनु, मीन) में स्थित हो।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    "यदि सप्तम भाव या मंगल पर ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "देवगुरु बृहस्पति या पूर्ण चंद्रमा" }),
+                    " की शुभ दृष्टि पड़ रही हो।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    "यदि एक की कुंडली में १, ४, ७, ८, १२वें भाव में मंगल हो और दूसरे की कुंडली के उन्हीं भावों में",
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "शनि, राहु या सूर्य" }),
+                    " बैठा हो (सम-सप्तम दोष निवारण)।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    "यदि अष्टकूट गुण मिलान में ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "२७ से अधिक गुण" }),
+                    " मिल रहे हों और ग्रह मैत्री व भकूट पूर्ण शुद्ध हों।"
+                  ] })
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "मांगलिक दोष शांति के प्रामाणिक वैदिक उपाय" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "कुंभ विवाह / शालिग्राम (विष्णु) विवाह" }),
+                    ": यदि कन्या प्रबल मांगलिक हो और वर अमांगलिक, तो विवाह से पूर्व वैदिक विधि से कुंभ विवाह या भगवान विष्णु की स्वर्ण प्रतिमा से प्रतीकात्मक विवाह।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "अर्क विवाह / अश्वत्थ विवाह" }),
+                    ": मांगलिक वर के लिए विवाह पूर्व मदार (अर्क) वृक्ष के साथ वैदिक शांति अनुष्ठान।"
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "मंगल चंडिका स्तोत्र एवं भात पूजा" }),
+                    ": नित्य मंगलवार को मंगल चंडिका स्तोत्र, सुंदरकांड पाठ तथा उज्जैन श्री मंगलनाथ या शिव मंदिर में लाल चंदन व पंचामृत से अभिषेक।"
+                  ] })
+                ] })
+              ] })
+            ] })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("nadi-dosh-nuskhe") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "nadi-dosh-nuskhe",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["nadi-dosh-nuskhe"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "अष्टकूट नाड़ी कूट (८ अंक) · पीयूष धारा एवं मुहूर्त मार्तण्ड परिहार सूत्र" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["nadi-dosh-nuskhe"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["nadi-dosh-nuskhe"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(NadiDoshMilanCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Compass, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "अष्टकूट मिलान में नाड़ी दोष (0/8 अंक) और १८ से कम गुण होने का रहस्य" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { children: [
+              "वैदिक ३६ गुण मिलान में ८ कूट होते हैं—वर्ण (१), वश्य (२), तारा (३), योनि (४), ग्रह मैत्री (५), गण (६), भकूट (७) और ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "नाड़ी (८ अंक)" }),
+              "। आयुर्वेद और ज्योतिष के अनुसार तीन नाड़ियां होती हैं:",
+              " ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "आदि नाड़ी (वात प्रकृति), मध्य नाड़ी (पित्त प्रकृति) और अन्त्य नाड़ी (कफ प्रकृति)" }),
+              "। जब वर और कन्या दोनों की नाड़ी एक समान हो जाती है, तो नाड़ी कूट के पूरे ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "८ अंक शून्य (0/8)" }),
+              " हो जाते हैं, जिसके कारण अक्सर कुल गुण मिलान ",
+              /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "१८ से नीचे (१२ से १७.५ के बीच)" }),
+              " आ जाता है।"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-emerald-700/40 p-4 sm:p-5 space-y-3", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-base sm:text-lg font-bold font-vedic text-emerald-300", children: "नाड़ी दोष कब नहीं लगता? (४ प्रामाणिक शास्त्रीय अपवाद — मुहूर्त चिंतामणि)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/90 italic", children: "“राश्यैक्ये चेद्भिन्नमृक्षं द्वयोः स्यान्नक्षत्रैक्ये राशियुग्मं तथैव। नाड़ीदोषो नो गणानां च दोषो...”" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-200", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-black/40 border border-emerald-800/40", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-emerald-300", children: "१. राशि एक हो, नक्षत्र भिन्न हों:" }),
+                  " यदि वर और कन्या दोनों की चन्द्र राशि एक ही हो, परंतु जन्म नक्षत्र अलग-अलग हों, तो नाड़ी दोष स्वतः समाप्त हो जाता है।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-black/40 border border-emerald-800/40", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-emerald-300", children: "२. नक्षत्र एक हो, राशि भिन्न हो:" }),
+                  " जैसे कृत्तिका, मृगशिरा, पुनर्वसु, उत्तराफाल्गुनी, चित्रा, उत्तराषाढ़ा या धनिष्ठा नक्षत्र में चरण भेद से राशि अलग हो जाए।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-black/40 border border-emerald-800/40", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-emerald-300", children: "३. नक्षत्र एक हो, चरण भेद (Pada Difference) हो:" }),
+                  " यदि एक का प्रथम चरण और दूसरे का चतुर्थ चरण हो (अर्थात् वेध रहित चरण भेद हो), तो दोष नगण्य रहता है।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-3 rounded-xl bg-black/40 border border-emerald-800/40", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { className: "text-emerald-300", children: "४. राशि स्वामियों में परम मैत्री:" }),
+                  " यदि वर-कन्या दोनों का राशि स्वामी एक ही ग्रह हो (जैसे मेष-वृश्चिक या वृषभ-तुला या धनु-मीन) अथवा मित्र हों।"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3 pt-1", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300", children: "यदि गुण मिलान १८ से कम हो और नाड़ी दोष भी हो, तो ५ अचूक शास्त्रीय नुस्खे व उपाय" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-amber-200", children: "१. स्वर्ण नाड़ी एवं सप्तधान्य दान (Swarna Nadi Daan)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-slate-300", children: "विवाह से पूर्व शुभ मुहूर्त में सोने या चांदी की तार से निर्मित नाड़ी (सर्पाकार आकृति), सप्तधान्य, तिल, घी और नवीन वस्त्र किसी विद्वान ब्राह्मण को संकल्पपूर्वक दान करने से नाड़ी दोष शांत होता है।" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-amber-200", children: "२. महामृत्युंजय जप एवं रुद्राभिषेक अनुष्ठान" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300", children: [
+                    "वर और कन्या के नाम व गोत्र से कम से कम ११,००० या सवा लाख",
+                    " ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "‘महामृत्युंजय मंत्र’" }),
+                    " का जप एवं दशांश हवन कराने से मध्य व अन्त्य नाड़ी दोष का प्राणभय पूर्णतः नष्ट हो जाता है।"
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-amber-200", children: "३. लग्न कुंडली के सप्तमेश व गुरु बल की जांच" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300", children: [
+                    "अष्टकूट मिलान केवल चन्द्र नक्षत्र पर आधारित होता है। यदि गुण १८ से कम (जैसे १४ से १७) हों, किंतु दोनों की जन्म लग्न कुंडली में ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "सप्तम भाव, सप्तमेश, शुक्र और गुरु बली हों" }),
+                    " तथा दशाएं शुभ हों, तो विवाह पूर्णतः सफल रहता है।"
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-1.5", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-bold text-amber-200", children: "४. गो-दान, अन्न दान एवं Rh Factor रक्त जांच" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-slate-300", children: [
+                    "कन्या के वजन के बराबर अन्न (तुलादान) व गौ-सेवा करें। साथ ही संतान की स्वस्थता हेतु आधुनिक चिकित्सा के अनुसार वर-कन्या का ",
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "Blood Group व Rh Factor" }),
+                    " अवश्य मिलवा लें।"
+                  ] })
+                ] })
+              ] })
+            ] })
+          ] })
+        ]
+      }
+    ),
+    [
+      {
+        slug: "a-naam-rashi-swabhav",
+        initialLetter: "A",
+        initialRashiId: "mesh",
+        tagLine: "चरण १ • शीर्ष नाम राशि विज्ञान • मेष राशि (Aries) • सेनापति मंगल",
+        syllablesHi: "अ, आ, अं, चू, चे, चो, ला, ली, लू, ले, लो (A, L, E, C)",
+        stats: [
+          { label: "मुख्य वैदिक राशि", value: "मेष राशि (Aries)" },
+          { label: "राशि स्वामी (Lord)", value: "सेनापति मंगल देव (Mars)" },
+          { label: "तत्व एवं प्रकृति", value: "अग्नि तत्व (Fire) · चर राशि" },
+          { label: "नक्षत्र एवं चरण", value: "अश्विनी (4), भरणी (4), कृत्तिका (1)" },
+          { label: "शुभ रत्न (Gemstone)", value: "तिकोना लाल मूंगा (Red Coral)" },
+          { label: "शुभ अंक (Lucky No.)", value: "9, 1, 3 और 18" },
+          { label: "शुभ रंग एवं वार", value: "लाल, सिंदूरी, पीला · मंगलवार" },
+          { label: "सिद्ध बीज मंत्र", value: "ॐ क्रां क्रीं क्रौं सः भौमाय नमः" }
+        ],
+        introText: "वैदिक स्वर सिद्धांत के अनुसार जिन जातकों का नाम अंग्रेजी के 'A' या 'L' अक्षर (हिंदी में अ, आ, अं, चू, चे, चो, ला, ली, लू, ले, लो — जैसे अमन, अमित, अनुज, आकाश, अंजलि, आरती, लोकेश, ललित) से प्रारंभ होता है, उनकी जन्म/नाम राशि मेष (Aries) होती है। मेष भचक्र की प्रथम राशि है जिसके स्वामी पराक्रम और ऊर्जा के कारक मंगल देव हैं।",
+        traits: [
+          "जन्मजात नेतृत्व एवं निडर स्वभाव: A नाम वाले लोग किसी के अधीन रहकर कार्य करने के बजाय स्वयं नेतृत्व (Leadership) करना पसंद करते हैं और कठिन से कठिन परिस्थिति में भी घबराते नहीं हैं।",
+          "स्पष्टवादी और कोमल हृदय: ये बाहर से जितने सख्त और स्पष्ट वक्ता दिखते हैं, भीतर से उतने ही उदार और मित्रों के लिए सर्वस्व न्योछावर करने वाले होते हैं।",
+          "त्वरित निर्णय क्षमता: अग्नि तत्व प्रधान होने से ये अपने लक्ष्य के प्रति बेहद केंद्रित रहते हैं; क्रोध क्षणिक होता है परंतु स्वाभिमान सर्वोपरि रहता है।"
+        ],
+        careerAndLove: [
+          "करियर एवं भाग्योदय: सेना, पुलिस, प्रशासन (IAS/IPS), इंजीनियरिंग, खेल, रियल एस्टेट, मेडिकल सर्जरी और स्वतंत्र व्यवसाय में इन्हें अद्वितीय सफलता मिलती है। 22, 27, 32 और 36वें वर्ष में विशेष भाग्योदय होता है।",
+          "प्रेम एवं वैवाहिक जीवन: ये रिश्तों में पूर्ण ईमानदारी चाहते हैं। सिंह, धनु, मिथुन और कुम्भ राशि के जातकों के साथ इनका दांपत्य जीवन अत्यंत सुखमय रहता है।"
+        ]
+      },
+      {
+        slug: "r-naam-rashi-swabhav",
+        initialLetter: "R",
+        initialRashiId: "tula",
+        tagLine: "चरण १ • शीर्ष नाम राशि विज्ञान • तुला राशि (Libra) • दैत्यगुरु शुक्र",
+        syllablesHi: "र, रा, री, रू, रे, रो, ता, ती, तू, ते (R, T)",
+        stats: [
+          { label: "मुख्य वैदिक राशि", value: "तुला राशि (Libra)" },
+          { label: "राशि स्वामी (Lord)", value: "ऐश्वर्य कारक शुक्र देव (Venus)" },
+          { label: "तत्व एवं प्रकृति", value: "वायु तत्व (Air) · चर राशि" },
+          { label: "नक्षत्र एवं चरण", value: "चित्रा (3,4), स्वाति (4), विशाखा (1,2,3)" },
+          { label: "शुभ रत्न (Gemstone)", value: "ओपल (Opal) / हीरा (Diamond)" },
+          { label: "शुभ अंक (Lucky No.)", value: "6, 5, 8 और 15" },
+          { label: "शुभ रंग एवं वार", value: "सफेद, क्रीम, हल्का नीला · शुक्रवार" },
+          { label: "सिद्ध बीज मंत्र", value: "ॐ द्रां द्रीं द्रौं सः शुक्राय नमः" }
+        ],
+        introText: "वैदिक ज्योतिष के नामाक्षर चक्र के अनुसार जिन व्यक्तियों का नाम अंग्रेजी के 'R' या 'T' अक्षर (हिंदी में र, रा, री, रू, रे, रो, ता, ती, तू, ते — जैसे राहुल, रोहित, राजेश, रवि, रितिका, रश्मि, रेखा, तरुण, तनुजा) से शुरू होता है, उनकी नाम राशि तुला (Libra) होती है। इसके स्वामी सुख, सौंदर्य और ऐश्वर्य के देवता शुक्र हैं।",
+        traits: [
+          "न्यायप्रिय एवं संतुलित व्यक्तित्व: तुला (तराजू) के समान R नाम वाले जातक जीवन के हर क्षेत्र में संतुलन, न्याय और निष्पक्षता बनाए रखते हैं।",
+          "आकर्षक एवं मिलनसार: शुक्र के प्रभाव से इनकी वाणी, मुस्कान और व्यक्तित्व में सहज आकर्षण होता है; ये जहां भी जाते हैं, लोगों का दिल जीत लेते हैं।",
+          "रचनात्मक व दूरदर्शी: ये विवादों को कूटनीति और शांति से सुलझाने में माहिर होते हैं तथा उच्च स्तर की जीवनशैली (Luxury Lifestyle) पसंद करते हैं।"
+        ],
+        careerAndLove: [
+          "करियर एवं धन योग: व्यापार, बैंकिंग, न्यायपालिका (Law), आईटी, फैशन, कला, मीडिया, होटल व प्रशासनिक सेवाओं में ये बड़ी सफलता और प्रचुर धन अर्जित करते हैं। 24, 30 और 33वें वर्ष में भाग्योदय होता है।",
+          "प्रेम एवं दाम्पत्य: शुक्र प्रधान होने से ये अत्यंत रोमांटिक और जीवनसाथी का सम्मान करने वाले होते हैं। मिथुन, कुम्भ, वृषभ और मकर राशि इनके लिए सर्वाधिक अनुकूल हैं।"
+        ]
+      },
+      {
+        slug: "m-naam-rashi-swabhav",
+        initialLetter: "M",
+        initialRashiId: "singh",
+        tagLine: "चरण १ • शीर्ष नाम राशि विज्ञान • सिंह राशि (Leo) • ग्रहराज सूर्य देव",
+        syllablesHi: "म, मा, मी, मू, मे, मो, टा, टी, टू, टे (M, T)",
+        stats: [
+          { label: "मुख्य वैदिक राशि", value: "सिंह राशि (Leo)" },
+          { label: "राशि स्वामी (Lord)", value: "ग्रहों के राजा सूर्य देव (Sun)" },
+          { label: "तत्व एवं प्रकृति", value: "अग्नि तत्व (Fire) · स्थिर राशि" },
+          { label: "नक्षत्र एवं चरण", value: "मघा (4), पूर्वाफाल्गुनी (4), उत्तराफाल्गुनी (1)" },
+          { label: "शुभ रत्न (Gemstone)", value: "माणिक्य (Ruby - रविवार धारण)" },
+          { label: "शुभ अंक (Lucky No.)", value: "1, 4, 9 और 10" },
+          { label: "शुभ रंग एवं वार", value: "सुनहरा, नारंगी, लाल · रविवार" },
+          { label: "सिद्ध बीज मंत्र", value: "ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः" }
+        ],
+        introText: "वैदिक नामाक्षर विज्ञान के अनुसार जिन लोगों का नाम अंग्रेजी के 'M' अक्षर (हिंदी में म, मा, मी, मू, मे, मो, टा, टी, टू, टे — जैसे मनोज, मोहित, मनीष, मयंक, मीनाक्षी, मधु, ममता, मुकेश) से प्रारंभ होता है, उनकी नाम राशि सिंह (Leo) होती है। सिंह राशि के स्वामी प्रत्यक्ष देवता भगवान सूर्य नारायण हैं।",
+        traits: [
+          "राजसी स्वाभिमान एवं तेज: सूर्य और सिंह के प्रभाव से M नाम वाले लोगों में अद्भुत आत्मविश्वास, रौब और नेतृत्व क्षमता होती है। ये अपने वचन के पक्के होते हैं।",
+          "उदार एवं परिवार रक्षक: ये अपने परिवार और आश्रितों की रक्षा सिंह के समान करते हैं तथा समाज में मान-प्रतिष्ठा के लिए सदैव अग्रणी रहते हैं।",
+          "स्पष्ट सिद्धांतवादी: इन्हें चापलूसी या धोखा बिल्कुल पसंद नहीं आता; ये जो भी करते हैं पूरे शाही अंदाज और निष्ठा से करते हैं।"
+        ],
+        careerAndLove: [
+          "करियर एवं राजयोग: सरकारी उच्च पद, राजनीति, प्रशासन (IAS/PCS), कॉर्पोरेट डायरेक्टर, सोना-चांदी व्यापार और चिकित्सा क्षेत्र में इन्हें सूर्य के समान ख्याति व राजयोग प्राप्त होता है।",
+          "प्रेम एवं वैवाहिक जीवन: ये अपने जीवनसाथी के प्रति बेहद समर्पित और सुरक्षात्मक (Protective) रहते हैं। मेष, धनु, मिथुन और तुला राशि वालों के साथ इनका श्रेष्ठ सामंजस्य बैठता है।"
+        ]
+      },
+      {
+        slug: "p-naam-rashi-swabhav",
+        initialLetter: "P",
+        initialRashiId: "kanya",
+        tagLine: "चरण १ • शीर्ष नाम राशि विज्ञान • कन्या राशि (Virgo) • राजकुमार बुध देव",
+        syllablesHi: "प, पा, पी, पू, पे, पो, ष, ण, ठ (P, Sh, N)",
+        stats: [
+          { label: "मुख्य वैदिक राशि", value: "कन्या राशि (Virgo)" },
+          { label: "राशि स्वामी (Lord)", value: "बुद्धि कारक बुध देव (Mercury)" },
+          { label: "तत्व एवं प्रकृति", value: "पृथ्वी तत्व (Earth) · द्विस्वभाव" },
+          { label: "नक्षत्र एवं चरण", value: "उत्तराफाल्गुनी (2,3,4), हस्त (4), चित्रा (1,2)" },
+          { label: "शुभ रत्न (Gemstone)", value: "पन्ना (Emerald - बुधवार धारण)" },
+          { label: "शुभ अंक (Lucky No.)", value: "5, 6, 3 और 14" },
+          { label: "शुभ रंग एवं वार", value: "हरा, सफेद, पन्ना रंग · बुधवार" },
+          { label: "सिद्ध बीज मंत्र", value: "ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः" }
+        ],
+        introText: "वैदिक स्वर सिद्धांत के अनुसार जिन जातकों का नाम अंग्रेजी के 'P' अक्षर (हिंदी में प, पा, पी, पू, पे, पो, ष, ण, ठ — जैसे पंकज, प्रदीप, पवन, प्रशांत, पूजा, प्रिया, पूनम, पायल, प्रतीक) से शुरू होता है, उनकी मुख्य वैदिक नाम राशि कन्या (Virgo) होती है। कन्या राशि के स्वामी बुद्धि, वाणी और वाणिज्य के देवता बुध हैं।",
+        traits: [
+          "कुशाग्र बुद्धि एवं विश्लेषक: P नाम वाले जातक अत्यंत तीक्ष्ण बुद्धि, तार्किक और हर कार्य को परफेक्शन (Perfection) के साथ करने वाले होते हैं।",
+          "मधुरभाषी एवं व्यवहारकुशल: बुध की कृपा से इनकी संवाद शैली (Communication Skill) इतनी प्रभावशाली होती है कि ये विपरीत परिस्थिति को भी अपने पक्ष में मोड़ लेते हैं।",
+          "पारिवारिक निष्ठा व शांतिप्रियता: ये समाज में अपनी साफ छवि और कर्तव्यनिष्ठा के लिए जाने जाते हैं तथा माता-पिता व परिवार का विशेष ध्यान रखते हैं।"
+        ],
+        careerAndLove: [
+          "करियर एवं व्यापार: सीए (CA), बैंकिंग, सॉफ्टवेयर/IT, व्यापार, शिक्षा, लेखन, वकालत और डेटा विश्लेषण में ये शिखर पर पहुंचते हैं। 23, 28, 32 और 35वें वर्ष में विशेष उन्नति होती है।",
+          "प्रेम एवं दाम्पत्य: ये भावनात्मक रूप से विश्वसनीय जीवनसाथी साबित होते हैं। वृषभ, मकर, मिथुन और तुला राशि वालों के साथ इनका वैवाहिक जीवन अत्यंत सुखद रहता है।"
+        ]
+      }
+    ].map(
+      (cfg) => shouldRenderTopic(cfg.slug) && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "article",
+        {
+          id: cfg.slug,
+          itemScope: true,
+          itemType: "https://schema.org/Article",
+          className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+          children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "script",
+              {
+                type: "application/ld+json",
+                dangerouslySetInnerHTML: {
+                  __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META[cfg.slug])
+                }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: cfg.tagLine })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "h1",
+                {
+                  itemProp: "headline",
+                  className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                  children: VEDIC_SEO_TOPICS_META[cfg.slug].h1
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META[cfg.slug].subtitleHi })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              AllLettersNaamRashiAnalyzer,
+              {
+                onConsultPanditJi: onAskPanditInChat,
+                currentUser,
+                initialLetter: cfg.initialLetter,
+                initialRashiId: cfg.initialRashiId
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 sm:grid-cols-4 gap-3", children: cfg.stats.map((stat) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "div",
+              {
+                className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-3.5 space-y-1",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-[11px] text-amber-400/80", children: stat.label }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs sm:text-sm font-bold text-amber-100", children: stat.value })
+                ]
+              },
+              stat.label
+            )) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(UserCheck, { className: "w-5 h-5 text-[#FF6F00]" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+                  "‘",
+                  cfg.initialLetter,
+                  "’ (",
+                  cfg.syllablesHi,
+                  ") नाम वालों का 100% सटीक स्वभाव एवं भविष्यफल"
+                ] })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: cfg.introText }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "१. स्वभाव एवं मानसिक विशेषताएं (Personality Traits)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: cfg.traits.map((t, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: t }, i)) })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "२. करियर, धन योग एवं वैवाहिक जीवन (Career & Marriage)" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: cfg.careerAndLove.map((c, i) => /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: c }, i)) })
+                ] })
+              ] })
+            ] })
+          ]
+        },
+        cfg.slug
+      )
+    ),
+    shouldRenderTopic("griha-pravesh-muhurat-2027") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "griha-pravesh-muhurat-2027",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["griha-pravesh-muhurat-2027"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "चरण २ • नूतन व जीर्ण गृह प्रवेश मुहूर्त २०२६-२०२७ • वास्तु शांति व कलश स्थापना" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["griha-pravesh-muhurat-2027"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["griha-pravesh-muhurat-2027"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(GrihaPraveshPersonalCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "नूतन एवं जीर्ण गृह प्रवेश की सर्वश्रेष्ठ शुभ तिथियां (2026–2027 सारणी)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "दिनांक एवं वार" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "हिन्दू मास एवं तिथि" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शुभ नक्षत्र" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "स्थिर लग्न मुहूर्त (IST)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शास्त्रीय विशेष योग" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: [
+                {
+                  dateHi: "18 नवंबर 2026 (बुधवार)",
+                  tithiHi: "कार्तिक शुक्ल नवमी (अक्षय नवमी)",
+                  nakshatraHi: "उत्तराभाद्रपद",
+                  lagnaHi: "प्रातः 06:45 AM – 08:42 AM (वृश्चिक लग्न)",
+                  noteHi: "कार्तिक मास का अबूझ एवं सर्वसिद्ध गृह प्रवेश मुहूर्त"
+                },
+                {
+                  dateHi: "25 नवंबर 2026 (बुधवार)",
+                  tithiHi: "मार्गशीर्ष कृष्ण प्रतिपदा/द्वितीया",
+                  nakshatraHi: "रोहिणी एवं मृगशिरा",
+                  lagnaHi: "प्रातः 07:40 AM – 09:38 AM (वृश्चिक/धनु)",
+                  noteHi: "सपूर्वा एवं नूतन दोनों गृह प्रवेश हेतु श्रेष्ठ"
+                },
+                {
+                  dateHi: "04 दिसंबर 2026 (शुक्रवार)",
+                  tithiHi: "मार्गशीर्ष कृष्ण दशमी",
+                  nakshatraHi: "चित्रा एवं स्वाति",
+                  lagnaHi: "प्रातः 10:55 AM – 12:28 PM (कुम्भ लग्न)",
+                  noteHi: "शुक्रवार + चित्रा नक्षत्र — ऐश्वर्य व लक्ष्मी वृद्धि योग"
+                },
+                {
+                  dateHi: "12 फरवरी 2027 (शुक्रवार)",
+                  tithiHi: "माघ शुक्ल षष्ठी",
+                  nakshatraHi: "रेवती नक्षत्र",
+                  lagnaHi: "प्रातः 09:50 AM – 11:48 AM (वृषभ स्थिर लग्न)",
+                  noteHi: "उत्तरायण सूर्य + माघ मास (धन-धान्य लाभप्रद)"
+                },
+                {
+                  dateHi: "17 फरवरी 2027 (बुधवार)",
+                  tithiHi: "माघ शुक्ल एकादशी/द्वादशी",
+                  nakshatraHi: "रोहिणी एवं मृगशिरा",
+                  lagnaHi: "प्रातः 09:30 AM – 11:26 AM (वृषभ लग्न)",
+                  noteHi: "सर्वार्थ सिद्धि योग + नूतन अपूर्वा गृह प्रवेश श्रेष्ठ"
+                },
+                {
+                  dateHi: "10 मार्च 2027 (बुधवार)",
+                  tithiHi: "फाल्गुन कृष्ण द्वादशी",
+                  nakshatraHi: "उत्तराषाढ़ा एवं श्रवण",
+                  lagnaHi: "प्रातः 08:05 AM – 10:02 AM (वृषभ लग्न)",
+                  noteHi: "फाल्गुन मास — संतान एवं सुख-शांति वर्धक"
+                },
+                {
+                  dateHi: "10 मई 2027 (सोमवार)",
+                  tithiHi: "वैशाख शुक्ल तृतीया/चतुर्थी",
+                  nakshatraHi: "रोहिणी एवं मृगशिरा",
+                  lagnaHi: "प्रातः 11:25 AM – 01:40 PM (सिंह लग्न)",
+                  noteHi: "वैशाख मास — अखंड सौभाग्य व पशु-वाहन सुख"
+                },
+                {
+                  dateHi: "19 मई 2027 (बुधवार)",
+                  tithiHi: "वैशाख शुक्ल द्वादशी/त्रयोदशी",
+                  nakshatraHi: "उत्तराफाल्गुनी एवं चित्रा",
+                  lagnaHi: "प्रातः 10:50 AM – 01:05 PM (सिंह स्थिर लग्न)",
+                  noteHi: "सिद्धि योग — नूतन भवन प्रवेश हेतु सर्वश्रेष्ठ"
+                },
+                {
+                  dateHi: "02 जून 2027 (बुधवार)",
+                  tithiHi: "ज्येष्ठ कृष्ण दशमी/एकादशी",
+                  nakshatraHi: "उत्तराभाद्रपद एवं रेवती",
+                  lagnaHi: "प्रातः 05:25 AM – 07:22 AM (वृषभ लग्न)",
+                  noteHi: "ज्येष्ठ मास — आरोग्य एवं वंश वृद्धि कारक"
+                },
+                {
+                  dateHi: "11 जून 2027 (शुक्रवार)",
+                  tithiHi: "ज्येष्ठ शुक्ल पंचमी/षष्ठी",
+                  nakshatraHi: "उत्तराफाल्गुनी एवं हस्त",
+                  lagnaHi: "प्रातः 09:20 AM – 11:35 AM (सिंह लग्न)",
+                  noteHi: "चातुर्मास से पूर्व जून 2027 का अंतिम महाशुभ मुहूर्त"
+                }
+              ].map((row) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-amber-950/25 transition-colors", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-semibold text-amber-100 whitespace-nowrap", children: row.dateHi }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: row.tithiHi }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-emerald-300 font-semibold", children: row.nakshatraHi }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-amber-100 font-medium", children: row.lagnaHi }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-xs text-amber-200/90", children: row.noteHi })
+              ] }, row.dateHi)) })
+            ] }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-emerald-700/40 p-4 space-y-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-emerald-300", children: "१. गृह प्रवेश में किस महीने का क्या फल मिलता है? (मत्स्य पुराण)" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "माघ मास" }),
+                  ": प्रचुर धन-धान्य और लक्ष्मी लाभ।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "फाल्गुन मास" }),
+                  ": संतान सुख, ऐश्वर्य और उत्तम आरोग्य।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "वैशाख एवं ज्येष्ठ मास" }),
+                  ": दीर्घायु, वाहन-पशु सुख और स्थायी समृद्धि।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "कार्तिक व मार्गशीर्ष" }),
+                  ": जीर्णोद्धार (सपूर्वा/द्वन्द्व) गृह प्रवेश के लिए अत्यंत शुभ।"
+                ] })
+              ] })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "rounded-2xl bg-[#140e07] border border-amber-800/40 p-4 space-y-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base font-bold font-vedic text-amber-300", children: "२. वास्तु कलश स्थापना एवं प्रथम दिवस के ५ अनिवार्य नियम" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("ul", { className: "space-y-1.5 text-xs sm:text-sm text-slate-300 list-disc pl-4", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "प्रवेश करते समय ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "दंपत्ति दायां पैर (Right Foot)" }),
+                  " आगे रखें और हाथ में तांबे का जलपूर्ण मंगल कलश व नारियल हो।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "ईशान कोण में ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "गणेश-अंबिका, वरुण कलश व वास्तु पुरुष" }),
+                  " का पूजन एवं हवन कराएं।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("li", { children: [
+                  "रसोई के आग्नेय कोण में नए बर्तन में ",
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("strong", { children: "दूध और मीठे चावल (खीर)" }),
+                  " उबालें।"
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("li", { children: "गृह प्रवेश की रात्रि को घर को खाली (सूना) न छोड़ें और अखंड दीपक प्रज्वलित रखें।" })
+              ] })
+            ] })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("ekadashi-vrat-list-2027") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "ekadashi-vrat-list-2027",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["ekadashi-vrat-list-2027"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "चरण २ • सम्पूर्ण २४ एकादशी व्रत कैलेंडर एवं पारण समय सारणी (2026–2027)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["ekadashi-vrat-list-2027"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["ekadashi-vrat-list-2027"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(EkadashiParanaInteractiveCalculator, { onConsultPanditJi: onAskPanditInChat }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Calendar, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "साल की सभी 24 एकादशी व्रत तिथियां एवं द्वादशी पारण समय सारणी (2026–2027)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "एकादशी का नाम" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "हिन्दू मास एवं पक्ष" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "व्रत तिथि (2026–2027)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "पारण समय (IST)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "विशेष आध्यात्मिक फल" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: [
+                ["१. उत्पन्ना एकादशी", "मार्गशीर्ष कृष्ण पक्ष", "04 दिसंबर 2026 (शुक्रवार)", "05 दिसं • 06:58 AM – 09:04 AM", "एकादशी व्रत प्रारंभ करने हेतु सर्वश्रेष्ठ"],
+                ["२. मोक्षदा एकादशी (गीता जयंती)", "मार्गशीर्ष शुक्ल पक्ष", "20 दिसंबर 2026 (रविवार)", "21 दिसं • 07:09 AM – 09:14 AM", "पितृ मोक्ष एवं भगवद्गीता जयंती पर्व"],
+                ["३. सफला एकादशी", "पौष कृष्ण पक्ष", "03 जनवरी 2027 (रविवार)", "04 जन • 07:14 AM – 09:19 AM", "रुके हुए समस्त कार्यों में सफलता प्रदायक"],
+                ["४. पौष पुत्रदा (वैकुण्ठ) एकादशी", "पौष शुक्ल पक्ष", "18 जनवरी 2027 (सोमवार)", "19 जन • 07:14 AM – 09:21 AM", "संतान सुख एवं संतान की उन्नति कारक"],
+                ["५. षट्तिला एकादशी", "माघ कृष्ण पक्ष", "02 फरवरी 2027 (मंगलवार)", "03 फर • 07:08 AM – 09:18 AM", "तिल के ६ प्रयोगों से दरिद्रता व पाप नाश"],
+                ["६. जया (भीष्म) एकादशी", "माघ शुक्ल पक्ष", "17 फरवरी 2027 (बुधवार)", "18 फर • 06:57 AM – 09:08 AM", "अज्ञात दोष एवं शत्रु बाधा से मुक्ति"],
+                ["७. विजया एकादशी", "फाल्गुन कृष्ण पक्ष", "04 मार्च 2027 (गुरुवार)", "05 मार्च • 06:42 AM – 08:58 AM", "प्रभु श्रीराम द्वारा लंका विजय पूर्व आचरित व्रत"],
+                ["८. आमलकी (रंगभरी) एकादशी", "फाल्गुन शुक्ल पक्ष", "19 मार्च 2027 (शुक्रवार)", "20 मार्च • 06:26 AM – 08:48 AM", "आंवला वृक्ष पूजन से आरोग्य व सौभाग्य"],
+                ["९. पापमोचनी एकादशी", "चैत्र कृष्ण पक्ष", "03 अप्रैल 2027 (शनिवार)", "04 अप्रै • 06:09 AM – 08:37 AM", "जाने-अनजाने हुए अपराधों का प्रायश्चित"],
+                ["१०. कामदा एकादशी", "चैत्र शुक्ल पक्ष", "17 अप्रैल 2027 (शनिवार)", "18 अप्रै • 05:54 AM – 08:26 AM", "समस्त मनोकामना पूर्ति एवं कष्ट निवारण"],
+                ["११. वरुथिनी एकादशी", "वैशाख कृष्ण पक्ष", "02 मई 2027 (रविवार)", "03 मई • 05:39 AM – 08:18 AM", "कन्यादान व अन्नदान के समान अक्षय पुण्य"],
+                ["१२. मोहिनी एकादशी", "वैशाख शुक्ल पक्ष", "17 मई 2027 (सोमवार)", "18 मई • 05:31 AM – 08:14 AM", "मोह बंधन मुक्ति एवं पारिवारिक सामंजस्य"],
+                ["१३. अपरा (अचला) एकादशी", "ज्येष्ठ कृष्ण पक्ष", "01 जून 2027 (मंगलवार)", "02 जून • 05:25 AM – 08:10 AM", "अपार धन-यश एवं ऋण मुक्ति प्रदायक"],
+                ["१४. निर्जला (भीमसेनी) एकादशी", "ज्येष्ठ शुक्ल पक्ष", "15 जून 2027 (मंगलवार)", "16 जून • 05:24 AM – 08:10 AM", "साल की सभी २४ एकादशियों का संपूर्ण फल"],
+                ["१५. योगिनी एकादशी", "आषाढ़ कृष्ण पक्ष", "30 जून 2027 (बुधवार)", "01 जुला • 05:27 AM – 08:13 AM", "चर्म रोग व शारीरिक व्याधियों से मुक्ति"],
+                ["१६. देवशयनी (हरिशयनी) एकादशी", "आषाढ़ शुक्ल पक्ष", "15 जुलाई 2027 (गुरुवार)", "16 जुला • 05:34 AM – 08:19 AM", "चातुर्मास प्रारंभ — श्री हरि योगनिद्रा पर्व"],
+                ["१७. कामिका एकादशी", "श्रावण कृष्ण पक्ष", "29 जुलाई 2027 (गुरुवार)", "30 जुला • 05:42 AM – 08:24 AM", "श्रावण मास में श्रीधर विष्णु व शिव कृपा"],
+                ["१८. श्रावण पुत्रदा (पवित्रा) एकादशी", "श्रावण शुक्ल पक्ष", "13 अगस्त 2027 (शुक्रवार)", "14 अग • 05:50 AM – 08:28 AM", "संतान रत्न प्राप्ति एवं वंश वृद्धि"],
+                ["१९. अजा एकादशी", "भाद्रपद कृष्ण पक्ष", "28 अगस्त 2027 (शनिवार)", "29 अग • 05:58 AM – 08:31 AM", "राजा हरिश्चंद्र द्वारा आचरित संकटमोचक व्रत"],
+                ["२०. परिवर्तिनी (पद्मा) एकादशी", "भाद्रपद शुक्ल पक्ष", "12 सितंबर 2027 (रविवार)", "13 सितं • 06:05 AM – 08:33 AM", "भगवान विष्णु के वामन अवतार का विशेष पूजन"],
+                ["२१. इंदिरा एकादशी (पितृ पक्ष)", "आश्विन कृष्ण पक्ष", "26 सितंबर 2027 (रविवार)", "27 सितं • 06:12 AM – 08:36 AM", "पितरों का उद्धार एवं पितृ दोष शांति"],
+                ["२२. पापांकुशा एकादशी", "आश्विन शुक्ल पक्ष", "11 अक्टूबर 2027 (सोमवार)", "12 अक्टू • 06:20 AM – 08:40 AM", "पद्मनाभ भगवान की कृपा व अकाल मृत्यु रक्षा"],
+                ["२३. रमा एकादशी (दीपावली पूर्व)", "कार्तिक कृष्ण पक्ष", "25 अक्टूबर 2027 (सोमवार)", "26 अक्टू • 06:29 AM – 08:44 AM", "अखंड महालक्ष्मी कृपा व वैभव प्राप्ति"],
+                ["२४. देवउठनी (प्रबोधिनी) एकादशी", "कार्तिक शुक्ल पक्ष", "09 नवंबर 2027 (मंगलवार)", "10 नवं • 06:40 AM – 08:50 AM", "तुलसी विवाह एवं विवाह-मांगलिक कार्य प्रारंभ"]
+              ].map(([name, paksha, dateStr, parana, phal]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-amber-950/25 transition-colors", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-bold text-amber-100", children: name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: paksha }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-[#FF6F00] font-semibold whitespace-nowrap", children: dateStr }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-emerald-300 font-medium whitespace-nowrap", children: parana }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-xs text-slate-300", children: phal })
+              ] }, name)) })
+            ] }) })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("kaalsarp-dosh-nivaran") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "kaalsarp-dosh-nivaran",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["kaalsarp-dosh-nivaran"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "चरण ३ • कुंडली दोष निवारण • १२ प्रकार के कालसर्प योग (अनन्त से शेषनाग)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["kaalsarp-dosh-nivaran"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["kaalsarp-dosh-nivaran"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(KaalsarpDoshCheckerCalculator, { onOpenBookingModal, currentUser }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ShieldCheck, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "जन्म कुंडली के १२ भावों के अनुसार १२ कालसर्प योगों की संपूर्ण सारणी" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "कालसर्प योग का नाम" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "राहु–केतु का भाव (Axis)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "मुख्य प्रभाव क्षेत्र" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "अचूक वैदिक शांति उपाय" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: [
+                ["१. अनन्त कालसर्प योग", "राहु १वें (लग्न) — केतु ७वें भाव", "व्यक्तित्व व वैवाहिक जीवन में संघर्ष", "नित्य शिव पंचाक्षर व रुद्राभिषेक"],
+                ["२. कुलिक कालसर्प योग", "राहु २रे (धन) — केतु ८वें भाव", "वाणी व कुटुम्ब-धन संचय में उतार-चढ़ाव", "चांदी की ठोस गोली पास रखें व शिव पूजन"],
+                ["३. वासुकि कालसर्प योग", "राहु ३रे (पराक्रम) — केतु ९वें भाव", "भ्रातृ सहयोग व भाग्य में परिश्रम", "नाग गायत्री मंत्र जप व सप्तधान्य दान"],
+                ["४. शंखपाल कालसर्प योग", "राहु ४थे (सुख) — केतु १०वें भाव", "माता, भूमि-भवन व मानसिक शांति", "बहते जल में नारियल प्रवाह व चांदी स्वस्तिक"],
+                ["५. पद्म कालसर्प योग", "राहु ५वें (विद्या/संतान) — केतु ११वें भाव", "शिक्षा व संतान पक्ष में विचारणीय", "संतोषी माता/कृष्ण पूजन व मोरपंख स्थापना"],
+                ["६. महापद्म कालसर्प योग", "राहु ६ठे (शत्रु) — केतु १२वें भाव", "शत्रु विजय पर गुप्त चिंता व व्यय", "सुंदरकांड पाठ व त्र्यंबकेश्वर/शिव अभिषेक"],
+                ["७. तक्षक कालसर्प योग", "राहु ७वें (विवाह) — केतु १वें भाव", "दांपत्य व साझेदारी व्यापार में सतर्कता", "महामृत्युंजय जप व कुंडली मिलान"],
+                ["८. कर्कोटक कालसर्प योग", "राहु ८वें (आयु) — केतु २रे भाव", "आकस्मिक बाधाएं व पैतृक धन में विलंब", "सोमवार को कच्चे दूध-काले तिल से अभिषेक"],
+                ["९. शंखचूड़ कालसर्प योग", "राहु ९वें (भाग्य) — केतु ३रे भाव", "भाग्य में उतार-चढ़ाव व धर्म संकट", "गुरु-पितृ सेवा व नवनाग स्तोत्र पाठ"],
+                ["१०. घातक कालसर्प योग", "राहु १०वें (कर्म) — केतु ४थे भाव", "नौकरी में संघर्ष के बाद उच्च राजयोग", "पीपल दीपदान व आशुतोष शिव आराधना"],
+                ["११. विषधर कालसर्प योग", "राहु ११वें (लाभ) — केतु ५वें भाव", "धन लाभ उत्तम पर संतान/नेत्र चिंता", "अन्न-कंबल दान व पंचाक्षर मंत्र जप"],
+                ["१२. शेषनाग कालसर्प योग", "राहु १२वें (व्यय) — केतु ६ठे भाव", "अनिद्रा/खर्च किंतु विदेश में बड़ी सफलता", "सिरहाने तांबे में जल रखें व नाग पूजन"]
+              ].map(([name, axis, impact, remedy]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-amber-950/25 transition-colors", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-bold text-amber-100", children: name }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-[#FF6F00] font-semibold", children: axis }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: impact }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-emerald-300", children: remedy })
+              ] }, name)) })
+            ] }) })
+          ] })
+        ]
+      }
+    ),
+    shouldRenderTopic("sapne-me-saap-dekhna") && /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "article",
+      {
+        id: "sapne-me-saap-dekhna",
+        itemScope: true,
+        itemType: "https://schema.org/Article",
+        className: "rounded-3xl bg-gradient-to-b from-[#171008] to-[#0d0905] border border-[#FF6F00]/50 p-4 sm:p-8 space-y-6 shadow-xl",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "script",
+            {
+              type: "application/ld+json",
+              dangerouslySetInnerHTML: {
+                __html: buildTopicJsonLd(VEDIC_SEO_TOPICS_META["sapne-me-saap-dekhna"])
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("header", { className: "space-y-3 border-b border-amber-800/40 pb-5", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-xs text-[#FF6F00] font-semibold tracking-wide flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "चरण ३ • स्वप्न शास्त्र एवं शकुन रहस्य • सपने में सांप दिखने के २१ संकेत" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "h1",
+              {
+                itemProp: "headline",
+                className: "text-xl sm:text-3xl font-extrabold font-vedic text-amber-100 leading-snug",
+                children: VEDIC_SEO_TOPICS_META["sapne-me-saap-dekhna"].h1
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs sm:text-sm text-amber-200/80 leading-relaxed", children: VEDIC_SEO_TOPICS_META["sapne-me-saap-dekhna"].subtitleHi })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SwapnaSaapInteractiveAnalyzer, { onConsultPanditJi: onAskPanditInChat }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 text-sm text-slate-200 leading-relaxed", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-xl font-bold font-vedic text-amber-300 flex items-center gap-2", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(BookOpen, { className: "w-5 h-5 text-[#FF6F00]" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "सपने में सांप देखने के प्रमुख रूप एवं उनका शुभ-अशुभ फल (स्वप्न शास्त्र सारणी)" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "overflow-x-auto rounded-2xl border border-amber-800/50 bg-[#0b0805]", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("table", { className: "w-full text-left border-collapse text-xs sm:text-sm", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx("thead", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "bg-gradient-to-r from-[#FF6F00]/25 to-amber-900/30 text-amber-200 border-b border-amber-700/50", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "स्वप्न का दृश्य (Dream Scenario)" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शुभ / अशुभ संकेत" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("th", { className: "p-3 font-bold", children: "शास्त्रीय अर्थ एवं आगामी फल" })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("tbody", { className: "divide-y divide-amber-900/30", children: [
+                ["१. सपने में सफेद सांप देखना", "महाशुभ (100% शुभ)", "भगवान शिव की कृपा, अचानक धन लाभ और भाग्योदय का योग"],
+                ["२. सपने में पीला या सुनहरा सांप देखना", "महाशुभ", "पैतृक संपत्ति, गड़ा धन या व्यापार में बड़े लाभ का संकेत"],
+                ["३. शिवलिंग से लिपटा हुआ सांप देखना", "दिव्य महाशुभ", "महादेव का रक्षा कवच, शत्रुओं का नाश और मनोकामना सिद्धि"],
+                ["४. फन उठाए शांत नाग देवता देखना", "अत्यंत शुभ", "समाज में पद-प्रतिष्ठा वृद्धि और पैतृक आशीर्वाद"],
+                ["५. सपने में हरा सांप या पेड़ पर चढ़ता सांप", "अति शुभ", "नौकरी में प्रमोशन, व्यापार उन्नति और शुभ समाचार"],
+                ["६. सपने में नाग-नागिन का जोड़ा देखना", "शुभ / कुल मन्नत", "वैवाहिक प्रेम वृद्धि अथवा कुलदेवता/नाग पूजन का स्मरण"],
+                ["७. सपने में मरा हुआ सांप देखना", "कष्ट निवृत्ति", "राहु/कालसर्प दोष की समाप्ति और बड़े संकट का टलना"],
+                ["८. सपने में सांप को मारना", "शत्रु विजय", "प्रतिद्वंद्वियों और गुप्त शत्रुओं पर पूर्ण विजय प्राप्त होना"],
+                ["९. सपने में सांप का काटना (डसना)", "रोग मुक्ति / सतर्कता", "आगामी गंभीर संकट का टलना, किंतु स्वास्थ्य के प्रति सजग रहें"],
+                ["१०. बहुत सारे सांपों से घिरा होना / पीछा करना", "चेतावनी (विचारणीय)", "कुंडली में कालसर्प दोष या पितृ दोष — शिव अभिषेक व नाग स्तोत्र करें"],
+                ["११. सांप और नेवले की लड़ाई देखना", "मानसिक द्वंद्व", "कोर्ट-कचहरी या पारिवारिक विवाद से दूर रहने की सलाह"],
+                ["१२. सांप को बिल में जाते हुए देखना", "धन संचय योग", "बचत में वृद्धि, किंतु किसी को उधार देने से बचें"]
+              ].map(([scene, status, meaning]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("tr", { className: "hover:bg-amber-950/25 transition-colors", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 font-bold text-amber-100", children: scene }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-emerald-300 font-semibold", children: status }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("td", { className: "p-3 text-slate-200", children: meaning })
+              ] }, scene)) })
+            ] }) })
+          ] })
+        ]
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      PageRelatedSeoQuestions,
+      {
+        pageKey: activeSlug,
+        onAskPanditInChat
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "rounded-3xl bg-[#140d07] border border-amber-800/50 p-4 sm:p-7 space-y-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-lg sm:text-2xl font-extrabold font-vedic text-amber-200 flex items-center gap-2", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(BookOpen, { className: "w-5 h-5 text-[#FF6F00]" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+          "अक्सर पूछे जाने वाले शास्त्रीय प्रश्न (FAQ — ",
+          currentMeta.shortLabelHi,
+          ")"
+        ] })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "space-y-2.5", children: currentMeta.faqs.map((faq, index) => {
+        const key = String(index);
+        const isOpen = openFaqKey === key;
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "rounded-2xl bg-[#0c0805] border border-amber-900/50 overflow-hidden",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "button",
+                {
+                  type: "button",
+                  onClick: () => setOpenFaqKey(isOpen ? null : key),
+                  className: "w-full px-4 py-3.5 text-left flex items-center justify-between gap-3 cursor-pointer hover:bg-amber-950/20 transition-colors",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-bold text-amber-100", children: faq.question }),
+                    isOpen ? /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronUp, { className: "w-4 h-4 text-[#FF6F00] flex-shrink-0" }) : /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronDown, { className: "w-4 h-4 text-amber-400 flex-shrink-0" })
+                  ]
+                }
+              ),
+              isOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-4 pb-4 pt-2 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-amber-950/60 space-y-2.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: faq.answer }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => onAskPanditInChat(faq.question),
+                    className: "inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500 text-amber-200 hover:text-slate-950 border border-amber-500/40 text-xs font-extrabold transition-all cursor-pointer",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(MessageCircle, { className: "w-3.5 h-3.5" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "ज्योतिष चैट में पण्डित जी से अपनी कुंडली अनुसार पूछें" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5" })
+                    ]
+                  }
+                )
+              ] })
+            ]
+          },
+          faq.question
+        );
+      }) })
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "rounded-3xl bg-gradient-to-b from-[#160c04] via-[#1a0e04] to-[#0d0904] border-2 border-amber-500/60 p-4 sm:p-6 space-y-4 shadow-xl", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center justify-between gap-2 border-b border-amber-800/40 pb-3", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "text-sm sm:text-lg font-extrabold font-vedic text-amber-200 flex items-center gap-1.5", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-amber-400" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "वैदिक मुहूर्त, नाम राशि (A, M, P, R, S) एवं दोष निवारण कोष (16 पृष्ठ)" })
+        ] }) }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            type: "button",
+            onClick: () => {
+              onNavigateToTab("gyan-kosh");
+              if (typeof window !== "undefined") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            },
+            className: "inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs cursor-pointer shadow-xs",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowLeft, { className: "w-3.5 h-3.5 shrink-0", strokeWidth: 1.5 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "धर्म एवं ज्ञान कोष (28 पृष्ठ)" })
+            ]
+          }
+        )
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs(
+        "nav",
+        {
+          "aria-label": "वैदिक ज्योतिष एवं मुहूर्त के 16 प्रमुख विषय",
+          className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3 items-stretch",
+          children: [
+            VEDIC_SEO_TOPIC_SLUGS.map((slug) => {
+              const item = VEDIC_SEO_TOPICS_META[slug];
+              const isActive = !viewAllMode && activeSlug === slug;
+              const cardThemes = {
+                "vivah-muhurat-2027": {
+                  icon: HeartHandshake,
+                  badge: "विवाह २०२६-२७",
+                  badgeColor: "bg-rose-500/20 text-rose-300 border-rose-400/40",
+                  border: "border-rose-500/50 hover:border-rose-300",
+                  bg: "from-rose-950/70 to-slate-900",
+                  desc: "वर्ष 2026 एवं 2027 के सभी शुद्ध विवाह मुहूर्त, तिथि व लग्न सारणी"
+                },
+                "griha-pravesh-muhurat-2027": {
+                  icon: Compass,
+                  badge: "गृह प्रवेश मुहूर्त",
+                  badgeColor: "bg-amber-500/20 text-amber-300 border-amber-400/40",
+                  border: "border-amber-500/50 hover:border-amber-300",
+                  bg: "from-amber-950/70 to-slate-900",
+                  desc: "नूतन व जीर्ण गृह प्रवेश मुहूर्त 2026-27, स्थिर लग्न व वास्तु कलश नियम"
+                },
+                "mundan-muhurat": {
+                  icon: Scissors,
+                  badge: "चूड़ाकरण संस्कार",
+                  badgeColor: "bg-amber-500/20 text-amber-300 border-amber-400/40",
+                  border: "border-amber-500/50 hover:border-amber-300",
+                  bg: "from-amber-950/70 to-slate-900",
+                  desc: "करण और नक्षत्र के अनुसार मुंडन संस्कार की शुभ तिथियां व नियम"
+                },
+                "vahan-kharidne-ka-muhurat": {
+                  icon: Car,
+                  badge: "वाहन क्रय मुहूर्त",
+                  badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-400/40",
+                  border: "border-emerald-500/50 hover:border-emerald-300",
+                  bg: "from-emerald-950/70 to-slate-900",
+                  desc: "कार, बाइक व वाहन खरीदने के लिए सभी ७ दिनों के शुभ मुहूर्त"
+                },
+                "ekadashi-vrat-list-2027": {
+                  icon: Calendar,
+                  badge: "२४ एकादशी सारणी",
+                  badgeColor: "bg-yellow-500/20 text-yellow-300 border-yellow-400/40",
+                  border: "border-yellow-500/50 hover:border-yellow-300",
+                  bg: "from-yellow-950/70 to-slate-900",
+                  desc: "साल की सभी 24 एकादशी व्रत तिथियां, हरि वासर व द्वादशी पारण समय"
+                },
+                "a-naam-rashi-swabhav": {
+                  icon: UserCheck,
+                  badge: "मेष • स्वामी मंगल",
+                  badgeColor: "bg-red-500/20 text-red-300 border-red-400/40",
+                  border: "border-red-500/50 hover:border-red-300",
+                  bg: "from-red-950/70 to-slate-900",
+                  desc: "A (अ, आ, ल) नाम वालों की मेष राशि, मंगल प्रभाव, करियर व मूंगा रत्न"
+                },
+                "m-naam-rashi-swabhav": {
+                  icon: UserCheck,
+                  badge: "सिंह • स्वामी सूर्य",
+                  badgeColor: "bg-orange-500/20 text-orange-300 border-orange-400/40",
+                  border: "border-orange-500/50 hover:border-orange-300",
+                  bg: "from-orange-950/70 to-slate-900",
+                  desc: "M (म, ट) नाम वालों की सिंह राशि, सूर्य राजयोग, करियर व माणिक्य रत्न"
+                },
+                "p-naam-rashi-swabhav": {
+                  icon: UserCheck,
+                  badge: "कन्या • स्वामी बुध",
+                  badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-400/40",
+                  border: "border-emerald-500/50 hover:border-emerald-300",
+                  bg: "from-emerald-950/70 to-slate-900",
+                  desc: "P (प, ष, ण) नाम वालों की कन्या राशि, बुध बुद्धिबल, व्यापार व पन्ना रत्न"
+                },
+                "r-naam-rashi-swabhav": {
+                  icon: UserCheck,
+                  badge: "तुला • स्वामी शुक्र",
+                  badgeColor: "bg-pink-500/20 text-pink-300 border-pink-400/40",
+                  border: "border-pink-500/50 hover:border-pink-300",
+                  bg: "from-pink-950/70 to-slate-900",
+                  desc: "R (र, त) नाम वालों की तुला राशि, शुक्र ऐश्वर्य, प्रेम व ओपल रत्न"
+                },
+                "s-naam-rashi-swabhav": {
+                  icon: UserCheck,
+                  badge: "कुंभ • स्वामी शनि",
+                  badgeColor: "bg-purple-500/20 text-purple-300 border-purple-400/40",
+                  border: "border-purple-500/50 hover:border-purple-300",
+                  bg: "from-purple-950/70 to-slate-900",
+                  desc: "S (स, श) व A से Z सभी अक्षरों की सटीक राशि, स्वामी शनि व स्वभाव"
+                },
+                "kaalsarp-dosh-nivaran": {
+                  icon: ShieldCheck,
+                  badge: "१२ कालसर्प जांच",
+                  badgeColor: "bg-teal-500/20 text-teal-300 border-teal-400/40",
+                  border: "border-teal-500/50 hover:border-teal-300",
+                  bg: "from-teal-950/70 to-slate-900",
+                  desc: "कालसर्प दोष के 12 प्रकार (अनंत से शेषनाग), कुंडली जांच व शांति उपाय"
+                },
+                "manglik-dosh-nivaran": {
+                  icon: Flame,
+                  badge: "मंगल दोष परिहार",
+                  badgeColor: "bg-orange-500/20 text-orange-300 border-orange-400/40",
+                  border: "border-orange-500/50 hover:border-orange-300",
+                  bg: "from-orange-950/70 to-slate-900",
+                  desc: "मांगलिक दोष क्या है? १, ४, ७, ८, १२ भाव मंगल व दोष भंग नियम"
+                },
+                "shani-sadesati-upay": {
+                  icon: Clock,
+                  badge: "शनि शांति उपाय",
+                  badgeColor: "bg-indigo-500/20 text-indigo-300 border-indigo-400/40",
+                  border: "border-indigo-500/50 hover:border-indigo-300",
+                  bg: "from-indigo-950/70 to-slate-900",
+                  desc: "शनि साढ़ेसाती व ढैय्या से बचने के सरल ज्योतिष उपाय व तीन चरण"
+                },
+                "nadi-dosh-nuskhe": {
+                  icon: ShieldCheck,
+                  badge: "अष्टकूट नाड़ी दोष",
+                  badgeColor: "bg-sky-500/20 text-sky-300 border-sky-400/40",
+                  border: "border-sky-500/50 hover:border-sky-300",
+                  bg: "from-sky-950/70 to-slate-900",
+                  desc: "गुण मिलान १८ से कम होने और नाड़ी दोष के ४ शास्त्रीय अपवाद व उपाय"
+                },
+                "sapne-me-saap-dekhna": {
+                  icon: Sparkles,
+                  badge: "सर्प स्वप्न शास्त्र",
+                  badgeColor: "bg-cyan-500/20 text-cyan-300 border-cyan-400/40",
+                  border: "border-cyan-500/50 hover:border-cyan-300",
+                  bg: "from-cyan-950/70 to-slate-900",
+                  desc: "सपने में काले, सफेद, पीले सांप व नाग-नागिन दिखने के २१ संकेत व फल"
+                }
+              };
+              const style = cardThemes[slug];
+              const IconComp = style.icon;
+              return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "a",
+                {
+                  href: item.canonicalPath,
+                  onClick: (e) => {
+                    e.preventDefault();
+                    setViewAllMode(false);
+                    onSelectTopic(slug);
+                    if (typeof window !== "undefined") {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }
+                  },
+                  className: `h-full p-3 sm:p-4 rounded-2xl bg-gradient-to-b ${style.bg} border ${isActive ? "border-yellow-300 ring-2 ring-amber-400/50" : style.border} text-left transition-all hover:scale-[1.01] cursor-pointer shadow-md group flex flex-col justify-between`,
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-1 mb-2", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-xl bg-black/40 text-amber-300 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors flex-shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(IconComp, { className: "w-4 h-4 sm:w-5 sm:h-5" }) }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: `text-[9px] font-bold px-2 py-0.5 rounded-full border whitespace-nowrap truncate max-w-[115px] sm:max-w-none ${style.badgeColor}`,
+                            children: style.badge
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-bold font-vedic text-amber-100 group-hover:text-yellow-300 leading-snug line-clamp-1", children: item.shortLabelHi }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] sm:text-[11px] text-amber-200/70 mt-1 line-clamp-2 min-h-[2.6rem] leading-relaxed", children: style.desc })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-2.5 mt-2.5 border-t border-amber-900/30 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-amber-500/20 group-hover:bg-amber-500 text-amber-200 group-hover:text-slate-950 border border-amber-500/40 text-[10px] sm:text-[11px] font-extrabold transition-all w-full justify-center shadow-sm", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: isActive ? "सक्रिय सुविधा" : "सुविधा खोलें" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" })
+                    ] }) })
+                  ]
+                },
+                slug
+              );
+            }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                onClick: () => {
+                  onNavigateToTab("gyan-kosh");
+                  if (typeof window !== "undefined") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                },
+                className: "h-full p-3 sm:p-4 rounded-2xl bg-gradient-to-b from-amber-950/80 to-slate-900 border border-amber-500/60 hover:border-yellow-300 text-left transition-all hover:scale-[1.01] cursor-pointer shadow-md group flex flex-col justify-between",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between gap-1 mb-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-2 rounded-xl bg-black/40 text-amber-300 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors flex-shrink-0", children: /* @__PURE__ */ jsxRuntimeExports.jsx(BookOpen, { className: "w-4 h-4 sm:w-5 sm:h-5" }) }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-[9px] font-bold px-2 py-0.5 rounded-full border whitespace-nowrap bg-amber-500/20 text-amber-200 border-amber-400/40", children: "सभी ५३ पृष्ठ" })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-xs sm:text-sm font-bold font-vedic text-amber-100 group-hover:text-yellow-300 leading-snug line-clamp-1", children: "सम्पूर्ण धर्म एवं ज्ञान कोष (53)" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-[10px] sm:text-[11px] text-amber-200/70 mt-1 line-clamp-2 min-h-[2.6rem] leading-relaxed", children: "विवाह योग, सरकारी नौकरी राजयोग, अंक ज्योतिष, A-Z नाम राशि व आरती सहित सभी ५३ पृष्ठ" })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "pt-2.5 mt-2.5 border-t border-amber-900/30 flex items-center justify-between", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: "inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-amber-500/20 group-hover:bg-amber-500 text-amber-200 group-hover:text-slate-950 border border-amber-500/40 text-[10px] sm:text-[11px] font-extrabold transition-all w-full justify-center shadow-sm", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "सुविधा खोलें" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" })
+                  ] }) })
+                ]
+              }
+            )
+          ]
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ShastroktaVedicVivechanCard,
+      {
+        pageTitleHi: currentMeta.metaTitle || currentMeta.h1 || currentMeta.shortLabelHi,
+        canonicalSlug: activeSlug
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("section", { className: "rounded-3xl bg-gradient-to-r from-[#261405] via-[#1c0f04] to-[#120a04] border border-[#FF6F00]/60 p-5 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4", children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1 text-center md:text-left", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "text-xs font-bold text-[#FF6F00]", children: "आचार्य पण्डित शशांक शर्मा · रुद्रपुर, उत्तराखण्ड" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "text-base sm:text-xl font-extrabold font-vedic text-amber-100", children: "अपनी जन्म कुंडली, विवाह मुहूर्त या दोष निवारण पर व्यक्तिगत परामर्श लें" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-xs text-amber-200/80", children: "३६ गुण मिलान, जन्म पत्रिका विश्लेषण, शांति पूजन या शुभ मुहूर्त गणना के लिए नीचे दिए विकल्प चुनें" })
+      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-wrap items-center justify-center gap-2.5", children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            type: "button",
+            onClick: () => onAskPanditInChat(
+              `आचार्य जी, मुझे "${currentMeta.shortLabelHi}" के विषय में अपनी कुंडली के अनुसार मार्गदर्शन चाहिए।`
+            ),
+            className: "px-4 py-2.5 rounded-xl bg-[#FF6F00] hover:bg-amber-600 text-white font-bold text-xs sm:text-sm flex items-center gap-2 cursor-pointer shadow-lg transition-all",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(MessageCircle, { className: "w-4 h-4" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "पं. शशांक शर्मा से पूछें" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "button",
+          {
+            type: "button",
+            onClick: () => onNavigateToTab("milan"),
+            className: "px-4 py-2.5 rounded-xl bg-amber-950/80 hover:bg-amber-900 text-amber-200 border border-amber-500/50 font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer transition-all",
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Sparkles, { className: "w-4 h-4 text-amber-400" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "३६ गुण मिलान करें" })
+            ]
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            onClick: () => onOpenBookingModal(currentMeta.shortLabelHi),
+            className: "px-4 py-2.5 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 border border-emerald-500/50 font-bold text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer transition-all",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "वैदिक पूजा बुकिंग" })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "a",
+          {
+            href: getWhatsAppLink(
+              `राधे राधे पण्डित जी! मुझे "${currentMeta.shortLabelHi}" के संबंध में ज्योतिषीय परामर्श चाहिए।`
+            ),
+            target: "_blank",
+            rel: "noopener noreferrer",
+            className: "px-4 py-2.5 rounded-xl bg-green-700 hover:bg-green-600 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 transition-all",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "WhatsApp परामर्श" })
+          }
+        )
+      ] })
+    ] })
+  ] });
+};
+export {
+  VEDIC_SEO_TOPICS_META,
+  VEDIC_SEO_TOPIC_SLUGS,
+  VedicSeoArticlesHub
+};
