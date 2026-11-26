@@ -103,10 +103,17 @@
       ]
     },
     {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
       "source": "/((?!api/|assets/|og-card/|og-svg/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|js|css|json|txt|xml|map)).*)",
       "headers": [
         { "key": "Content-Type", "value": "text/html; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate, s-maxage=0" },
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
         { "key": "Link", "value": "</ai-catalog.json>; rel=\"ai-catalog\", </ai-catalog.json>; rel=\"ard\"" }
       ]
     },
