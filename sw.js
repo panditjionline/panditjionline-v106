@@ -3,7 +3,10 @@
 const CACHE_NAME = 'panditjionline-v111';
 const IS_LIVE_PROD_HOST = /^(?:www\.)?panditjionline\.online$/i.test(self.location.hostname || '');
 const PRECACHE_ASSETS = [
+  '/pandit-shashank-sharma.jpg',
+  '/pandit-photo.jpg',
   '/pandit-avatar-96.webp',
+  '/app-icon.svg',
   '/favicon.ico',
   '/favicon-48x48.png',
   '/favicon-96x96.png',
@@ -24,7 +27,20 @@ self.addEventListener('install', (event) => {
   }
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(PRECACHE_ASSETS).catch(() => {}))
+      .then((cache) =>
+        Promise.all(
+          PRECACHE_ASSETS.map((assetUrl) =>
+            fetch(assetUrl, { cache: 'no-cache' })
+              .then((res) => {
+                if (!res || res.status !== 200) return;
+                const ct = (res.headers.get('content-type') || '').toLowerCase();
+                if (ct.includes('text/html')) return;
+                return cache.put(assetUrl, res);
+              })
+              .catch(() => {})
+          )
+        )
+      )
       .then(() => self.skipWaiting())
   );
 });
@@ -73,7 +89,45 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 1. Strict Network-First (bypassing HTTP disk cache) for index.html & all navigations; cache fallback only offline
+  const isImageAsset = /\.(jpg|jpeg|png|webp|gif|svg|ico)$/i.test(url.pathname);
+  const isCodeAsset = /\.(js|mjs|ts|tsx|jsx|css)$/i.test(url.pathname);
+  const isNonHtmlAsset = isImageAsset || isCodeAsset;
+
+  // 1. Dedicated Image Handler: Cache-First with strict non-HTML guard — NEVER falls back to index.html
+  if (isImageAsset) {
+    event.respondWith(
+      caches.open(CACHE_NAME).then((cache) =>
+        cache.match(event.request).then((cachedResponse) => {
+          const cachedType = cachedResponse
+            ? (cachedResponse.headers.get('content-type') || '').toLowerCase()
+            : '';
+          const validCached = cachedResponse && cachedResponse.status === 200 && !cachedType.includes('text/html');
+          if (validCached) {
+            return cachedResponse;
+          }
+          if (cachedResponse) {
+            cache.delete(event.request).catch(() => {});
+          }
+          return fetch(event.request)
+            .then((networkResponse) => {
+              if (!networkResponse || networkResponse.status !== 200) {
+                return new Response(null, { status: networkResponse ? networkResponse.status : 404 });
+              }
+              const contentType = (networkResponse.headers.get('content-type') || '').toLowerCase();
+              if (contentType.includes('text/html')) {
+                return new Response(null, { status: 404, statusText: 'Image Not Found' });
+              }
+              cache.put(event.request, networkResponse.clone());
+              return networkResponse;
+            })
+            .catch(() => new Response(null, { status: 404, statusText: 'Offline Image' }));
+        })
+      )
+    );
+    return;
+  }
+
+  // 2. Strict Network-First (bypassing HTTP disk cache) for index.html & all navigations; cache fallback only offline
   const isHtmlNav =
     event.request.mode === 'navigate' ||
     url.pathname === '/' ||
@@ -96,14 +150,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  const isCodeAsset = /\.(js|mjs|ts|tsx|jsx|css)$/i.test(url.pathname);
-
-  // 2. Immutable hashed Vite chunks (/assets/*), optimized deity WebPs, static OG JPGs & icons: Cache-First
+  // 3. Immutable hashed Vite chunks (/assets/*) & fonts: Cache-First
   const isCacheFirstStatic =
     url.pathname.startsWith('/assets/') ||
     url.pathname.startsWith('/deities/') ||
     url.pathname.startsWith('/og-card/') ||
-    /\.(webp|jpg|jpeg|png|gif|svg|ico|woff2?|ttf)$/i.test(url.pathname);
+    /\.(woff2?|ttf)$/i.test(url.pathname);
 
   if (isCacheFirstStatic) {
     event.respondWith(
@@ -111,15 +163,16 @@ self.addEventListener('fetch', (event) => {
         cache.match(event.request).then((cachedResponse) => {
           if (cachedResponse) {
             const cachedType = (cachedResponse.headers.get('content-type') || '').toLowerCase();
-            if (!(isCodeAsset && cachedType.includes('text/html'))) {
+            if (!(isNonHtmlAsset && cachedType.includes('text/html'))) {
               return cachedResponse;
             }
+            cache.delete(event.request).catch(() => {});
           }
           return fetch(event.request)
             .then((networkResponse) => {
               if (networkResponse && networkResponse.status === 200) {
                 const contentType = (networkResponse.headers.get('content-type') || '').toLowerCase();
-                if (isCodeAsset && contentType.includes('text/html')) {
+                if (isNonHtmlAsset && contentType.includes('text/html')) {
                   return new Response('', { status: 404, statusText: 'Not Found' });
                 }
                 cache.put(event.request, networkResponse.clone());
@@ -133,7 +186,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 3. Per-route SEO JSON fragments (/seo-chunks/*.json) & other static assets: Stale-While-Revalidate
+  // 4. Per-route SEO JSON fragments (/seo-chunks/*.json) & other static assets: Stale-While-Revalidate
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) =>
       cache.match(event.request).then((cachedResponse) => {
@@ -141,7 +194,7 @@ self.addEventListener('fetch', (event) => {
           .then((networkResponse) => {
             if (networkResponse && networkResponse.status === 200) {
               const contentType = (networkResponse.headers.get('content-type') || '').toLowerCase();
-              if (isCodeAsset && contentType.includes('text/html')) {
+              if (isNonHtmlAsset && contentType.includes('text/html')) {
                 return new Response('', { status: 404, statusText: 'Not Found' });
               }
               cache.put(event.request, networkResponse.clone());
@@ -152,7 +205,7 @@ self.addEventListener('fetch', (event) => {
 
         if (cachedResponse) {
           const cachedType = (cachedResponse.headers.get('content-type') || '').toLowerCase();
-          if (!(isCodeAsset && cachedType.includes('text/html'))) {
+          if (!(isNonHtmlAsset && cachedType.includes('text/html'))) {
             event.waitUntil(networkPromise.catch(() => {}));
             return cachedResponse;
           }

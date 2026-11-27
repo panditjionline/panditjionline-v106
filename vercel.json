@@ -103,6 +103,33 @@
       ]
     },
     {
+      "source": "/(.*\\.(?:jpg|jpeg))",
+      "headers": [
+        { "key": "Content-Type", "value": "image/jpeg" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*\\.webp)",
+      "headers": [
+        { "key": "Content-Type", "value": "image/webp" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*\\.svg)",
+      "headers": [
+        { "key": "Content-Type", "value": "image/svg+xml; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
       "source": "/(assets/.*|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2))",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
@@ -118,7 +145,7 @@
       ]
     },
     {
-      "source": "/((?!api/|assets/|og-card/|og-svg/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|js|css|json|txt|xml|map)).*)",
+      "source": "/((?!api/|assets/|seo-chunks/|deities/|og-card/|og-svg/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|js|css|json|txt|xml|webmanifest|map)).*)",
       "headers": [
         { "key": "Content-Type", "value": "text/html; charset=utf-8" },
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
@@ -177,7 +204,7 @@
   ],
   "rewrites": [
     {
-      "source": "/(pwa-512x512\\.png|pwa-maskable-512x512\\.png|app-icon\\.svg)",
+      "source": "/(pwa-512x512\\.png|pwa-maskable-512x512\\.png)",
       "destination": "/pwa-192x192.png"
     },
     {
@@ -193,7 +220,7 @@
       "destination": "/og-card/home-discover-v42.jpg"
     },
     {
-      "source": "/((?!api/|assets/|og-card/|og-svg/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2|js|css|json|txt|xml|map)).*)",
+      "source": "/((?!api/|assets/|seo-chunks/|og-card/|og-svg/|deities/|\\.well-known/|ai-catalog\\.json|seo-data\\.json|admin-download-manifest\\.json|llms\\.txt|ads\\.txt|sitemap\\.xml|feed\\.xml|rss\\.xml|robots\\.txt|manifest\\.json|sw\\.js|middleware\\.js|shell-runtime\\.js|admin-control\\.js|app-engine|googlea0e64484b80e13d1\\.html|favicon|pwa-|apple-touch-icon|app-icon|.*\\.(?:jpg|jpeg|png|webp|svg|ico|xml|txt|json|js|css|webmanifest|woff2|map)).*)",
       "destination": "/index.html"
     }
   ]
