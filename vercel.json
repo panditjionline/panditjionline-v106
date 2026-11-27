@@ -39,7 +39,7 @@
       "headers": [
         { "key": "Content-Type", "value": "application/json; charset=utf-8" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Cache-Control", "value": "public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000" }
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, must-revalidate" }
       ]
     },
     {
@@ -79,7 +79,7 @@
       "headers": [
         { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800" }
+        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=300, must-revalidate" }
       ]
     },
     {
@@ -88,7 +88,7 @@
         { "key": "Content-Type", "value": "image/x-icon" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400" },
         { "key": "X-Robots-Tag", "value": "all" }
       ]
     },
@@ -98,7 +98,7 @@
         { "key": "Content-Type", "value": "image/png" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400" },
         { "key": "X-Robots-Tag", "value": "all" }
       ]
     },
@@ -108,7 +108,7 @@
         { "key": "Content-Type", "value": "image/jpeg" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400" }
       ]
     },
     {
@@ -117,7 +117,7 @@
         { "key": "Content-Type", "value": "image/webp" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400" }
       ]
     },
     {
@@ -126,11 +126,11 @@
         { "key": "Content-Type", "value": "image/svg+xml; charset=utf-8" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        { "key": "Cache-Control", "value": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400" }
       ]
     },
     {
-      "source": "/(assets/.*|.*\\.(?:ico|png|jpg|jpeg|svg|webp|woff2))",
+      "source": "/assets/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "source": "/index.html",
+      "source": "/(.*\\.html)",
       "headers": [
         { "key": "Content-Type", "value": "text/html; charset=utf-8" },
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
@@ -172,7 +172,7 @@
       ]
     },
     {
-      "source": "/(404\\.html|404|llms\\.txt|ai-catalog\\.json|admin-download-manifest\\.json|app-engine\\.txt|app-engine\\.html|download-center|indexnow\\.txt|\\.well-known/.*|api/.*|manifest\\.json|sw\\.js|middleware\\.js|admin-control\\.js|shell-runtime\\.js)",
+      "source": "/(404\\.html|404|llms\\.txt|ai-catalog\\.json|admin-download-manifest\\.json|app-engine\\.txt|app-engine\\.html|download-center|mera-khata|mera-khata/.*|indexnow\\.txt|\\.well-known/.*|api/.*|manifest\\.json|sw\\.js|middleware\\.js|admin-control\\.js|shell-runtime\\.js)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
       ]

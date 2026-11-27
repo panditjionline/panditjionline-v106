@@ -1,6 +1,6 @@
-// Pandit Ji Online — Instant-Update Native Code-Split Service Worker (v112)
+// Pandit Ji Online — Instant-Update Native Code-Split Service Worker (v113)
 // Active ONLY on live production domain (panditjionline.online); self-unregisters on local/preview hosts
-const CACHE_NAME = 'panditjionline-v112';
+const CACHE_NAME = 'panditjionline-v113';
 const IS_LIVE_PROD_HOST = /^(?:www\.)?panditjionline\.online$/i.test(self.location.hostname || '');
 const PRECACHE_ASSETS = [
   '/pandit-shashank-sharma.jpg',
@@ -76,6 +76,8 @@ self.addEventListener('fetch', (event) => {
     url.pathname === '/admin-control.js' ||
     url.pathname === '/admin-download-manifest.json' ||
     url.pathname === '/seo-data.json' ||
+    url.pathname === '/ai-catalog.json' ||
+    url.pathname === '/llms.txt' ||
     url.pathname === '/feed.xml' ||
     url.pathname === '/sitemap.xml' ||
     url.pathname === '/robots.txt' ||

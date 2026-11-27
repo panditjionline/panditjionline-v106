@@ -76,7 +76,7 @@
     "royalEngineEnabled": true,
     "royalManualPresetId": null,
     "lightsMode": "spectrum_line",
-    "jhalarAnimation": "running_chase",
+    "jhalarAnimation": "twinkle",
     "toranStyle": "marigold_mango",
     "cornerLadiMode": "off",
     "autoPushpVarsha": true,
@@ -423,6 +423,14 @@
 
   function syncFromRealtimeCloud() {
     if (typeof window.fetch !== 'function') return Promise.resolve(null);
+    if (
+      typeof navigator !== 'undefined' &&
+      /bot|googlebot|google-inspectiontool|storebot-google|apis-google|bingbot|crawler|spider|chrome-lighthouse|lighthouse|pagespeed|mediapartners|adsbot/i.test(
+        navigator.userAgent || ''
+      )
+    ) {
+      return Promise.resolve(null);
+    }
     if (Date.now() - Number(window.__pjLastAdminLocalActionAt || 0) < 12000) {
       return Promise.resolve(null);
     }

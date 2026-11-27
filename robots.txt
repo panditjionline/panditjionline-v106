@@ -37,8 +37,6 @@ Disallow: /indexnow.txt
 Disallow: /*?tab=
 Disallow: /*?category=
 Disallow: /*?admin=
-Disallow: /*?city=
-Disallow: /*?date=
 
 User-agent: Googlebot
 Allow: /
@@ -64,8 +62,6 @@ Disallow: /indexnow.txt
 Disallow: /*?tab=
 Disallow: /*?category=
 Disallow: /*?admin=
-Disallow: /*?city=
-Disallow: /*?date=
 
 User-agent: Googlebot-Image
 Allow: /
