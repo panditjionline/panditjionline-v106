@@ -85,7 +85,7 @@
     "hairlineEffect": "festival",
     "hairlineSpeed": "normal",
     "showToran": false,
-    "sandhyaAutoGlow": true,
+    "sandhyaAutoGlow": false,
     "updatedAt": 1,
     "customBadgeHi": "",
     "customGreetingHi": "",
@@ -502,8 +502,12 @@
               if (merged.mode === 'auto') {
                 merged.manualFestivalId = null;
                 merged.royalManualPresetId = null;
+                if (merged.royalEngineEnabled !== false) {
+                  merged.enableDayOfWeekTheme = true;
+                }
               }
               window.localStorage.removeItem(VISUAL_CACHE_KEY);
+              window.localStorage.removeItem('panditji_active_theme_visual_cache_v7');
             } else if (merged.themeSnapshot) {
               window.localStorage.setItem(VISUAL_CACHE_KEY, JSON.stringify(merged.themeSnapshot));
               applyThemeSnapshotToDOM(merged.themeSnapshot);
